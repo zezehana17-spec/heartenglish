@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Heart English · August Advanced Review</title>
+<style>
+:root{--bg:#f6f5f0;--card:#fff;--ink:#171717;--muted:#737373;--line:#e5e3dc;--soft:#efeee8;--soft2:#faf9f5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+.wrap{max-width:430px;margin:auto;min-height:100vh;padding-bottom:48px}
+.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);padding:14px 18px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-size:11px;font-weight:900;letter-spacing:.12em}.back{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 11px;font-weight:800;cursor:pointer}
+main{padding:22px 18px}.kicker{font-size:10px;font-weight:900;letter-spacing:.12em;color:#888}
+h1{font-size:29px;line-height:1.08;margin:7px 0 6px}.lead{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:18px}
+.nav{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:14px 0 18px}.nav button{border:1px solid var(--line);background:#fff;border-radius:13px;padding:9px 5px;font-size:10px;font-weight:900;cursor:pointer}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;margin:12px 0;box-shadow:0 4px 14px rgba(0,0,0,.025)}
+.section-title{font-size:21px;font-weight:950;margin:5px 0}.step{font-size:10px;font-weight:900;letter-spacing:.1em;color:#888}.help{font-size:11px;color:#888;line-height:1.55;margin-top:6px}
+.flip{cursor:pointer;min-height:154px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:var(--soft2);border:1px solid var(--line);border-radius:18px;padding:22px 16px;margin-top:13px}
+.flip .kr{font-size:18px;font-weight:900;line-height:1.45}.flip .en{font-size:20px;font-weight:950;line-height:1.35}.flip .example{font-size:12px;color:#666;line-height:1.55;margin-top:9px}
+.tap{font-size:10px;color:#888;font-weight:900;letter-spacing:.08em;margin-top:14px}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}.btn{border:0;border-radius:999px;padding:10px 13px;font-weight:900;cursor:pointer}.primary{background:#171717;color:#fff}.secondary{background:var(--soft);color:#333}.ghost{background:#fff;border:1px solid var(--line);color:#333}
+.counter{font-size:11px;color:#777;margin-left:auto;align-self:center}.q{font-size:17px;font-weight:900;line-height:1.45;margin:9px 0 4px}.qkr{font-size:12px;color:#777;line-height:1.5;margin-bottom:13px}
+.pattern{background:var(--soft2);border:1px solid var(--line);border-radius:15px;padding:14px;font-size:14px;font-weight:850;line-height:1.65}
+.blank{display:inline-block;min-width:88px;border-bottom:2px solid #171717;padding:0 4px 2px;text-align:center;color:#171717}
+.label{font-size:11px;font-weight:900;color:#666;margin:15px 0 8px}.options{display:flex;flex-wrap:wrap;gap:8px}
+.opt{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 11px;font-size:12px;font-weight:800;cursor:pointer}.opt.on{background:#171717;color:#fff;border-color:#171717}
+textarea,input[type=text]{width:100%;border:1px solid var(--line);border-radius:14px;padding:12px;font:inherit;font-size:13px;line-height:1.5;background:#fff}
+textarea{min-height:72px;resize:vertical;margin-top:9px}input[type=text]{margin-top:8px}
+.answer{margin-top:13px;padding:13px;border-radius:14px;background:#f2f1ec;font-size:14px;line-height:1.6}.answer strong{display:block;font-size:10px;letter-spacing:.08em;color:#777;margin-bottom:5px}
+.ai-box{margin-top:10px;padding:13px;border:1px solid var(--line);border-radius:14px;background:#fff}.ai-title{font-size:11px;font-weight:900;margin-bottom:5px}.good{font-weight:800}
+.script-edit{min-height:230px}.script-card{cursor:pointer;background:var(--soft2);border:1px solid var(--line);border-radius:16px;padding:17px;margin-top:10px;min-height:132px;display:flex;flex-direction:column;justify-content:center}
+.script-korean{font-size:16px;font-weight:900;line-height:1.55}.script-english{font-size:15px;font-weight:850;line-height:1.6}.script-num{font-size:10px;color:#888;font-weight:900;letter-spacing:.08em;margin-bottom:8px}
+.hidden{display:none}audio{width:100%;margin-top:12px}.record{width:100%;font-size:15px;padding:14px;margin-top:13px}.status{font-size:11px;color:#666;margin-top:10px;line-height:1.5}
+.notice{background:#171717;color:#fff;border-radius:16px;padding:14px;font-size:12px;line-height:1.6;margin-top:12px}
+.warn{background:#fff7e6;border:1px solid #ead9ad;border-radius:14px;padding:12px;font-size:12px;line-height:1.55;margin-top:10px}
+.feedback{margin-top:13px}.feedback h3{font-size:14px;margin:13px 0 6px}.feedback p,.feedback li{font-size:12px;line-height:1.6}
+.loading{opacity:.55;pointer-events:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><div class="brand">HEART ENGLISH</div><button class="back" onclick="history.back()">← Review</button></div>
+<main>
+<div class="kicker">AUGUST · ADVANCED REVIEW</div>
+<h1>Four-Day Workweek</h1>
+<div class="lead">배운 표현 → Small Talk → 내 Script → 한글 Flip → Final Speaking. 선택 답은 즉시 저장되고, 직접 쓴 영어는 AI로 문법·스펠링을 확인할 수 있습니다.</div>
+
+<div class="nav">
+<button onclick="go('idiom')">IDIOM</button><button onclick="go('smalltalk')">SMALL TALK</button><button onclick="go('script')">MY SCRIPT</button><button onclick="go('record')">RECORD</button>
+</div>
+
+<section class="card" id="idiom">
+<div class="step">STEP 1 · IDIOM REVIEW</div><div class="section-title">한국어를 보고 먼저 떠올려보세요.</div>
+<div class="help">카드를 눌러 Flip하고, Listen으로 영어 표현과 예문을 들어보세요.</div>
+<div class="flip" id="idiomFlip" onclick="flipIdiom()"><div class="kr" id="idiomKr"></div><div class="en hidden" id="idiomEn"></div><div class="example hidden" id="idiomEx"></div><div class="tap" id="idiomTap">TAP TO FLIP</div></div>
+<div class="row"><button class="btn secondary" onclick="prevIdiom()">← Prev</button><button class="btn ghost" onclick="speakIdiom()">🔊 Listen</button><button class="btn primary" onclick="nextIdiom()">Next →</button><div class="counter" id="idiomCount"></div></div>
+</section>
+
+<section id="smalltalk">
+<div class="card"><div class="step">STEP 2 · SMALL TALK</div><div class="section-title">패턴의 빈칸을 내 답으로 채우세요.</div><div class="help">선택지를 누르는 순간 자동 저장됩니다. 직접 쓴 답은 AI Check 후 적용하세요.</div></div>
+
+<section class="card" id="question1">
+<div class="step">Q1</div><div class="q">What two benefits could a four-day workweek offer?</div><div class="qkr">주 4일 근무제는 어떤 두 가지 장점을 동시에 제공할 수 있을까요?</div>
+<div class="pattern">It could offer the best of both worlds: <span class="blank" id="q1a"></span> and <span class="blank" id="q1b"></span>.</div>
+<div class="label">빈칸 1</div><div class="options" data-target="q1a">
+<button class="opt" data-ko="더 높은 생산성">higher productivity</button><button class="opt" data-ko="더 나은 일과 삶의 균형">better work-life balance</button><button class="opt" data-ko="더 많은 여가 시간">more free time</button><button class="opt" data-ko="번아웃 감소">less burnout</button></div>
+<div class="label">빈칸 2</div><div class="options" data-target="q1b">
+<button class="opt" data-ko="더 높은 생산성">higher productivity</button><button class="opt" data-ko="더 나은 일과 삶의 균형">better work-life balance</button><button class="opt" data-ko="더 많은 여가 시간">more free time</button><button class="opt" data-ko="번아웃 감소">less burnout</button></div>
+<textarea id="q1custom" placeholder="직접 입력 예: more family time"></textarea><input id="q1customKo" type="text" placeholder="한글 힌트 예: 가족과 더 많은 시간">
+<div class="row"><button class="btn secondary" onclick="checkCustom(1,'q1b')">✨ Check My English</button><button class="btn ghost" onclick="listenAnswer(1)">🔊 Listen</button></div>
+<div class="ai-box hidden" id="ai1"></div><div class="answer" id="ans1"><strong>MY ANSWER</strong>아직 완성되지 않았습니다.</div>
+</section>
+
+<section class="card" id="question2">
+<div class="step">Q2</div><div class="q">What do you think is the biggest drawback of a four-day workweek?</div><div class="qkr">주 4일 근무제의 가장 큰 단점은 무엇이라고 생각하나요?</div>
+<div class="pattern">It may come at a cost, such as <span class="blank" id="q2a"></span>.</div>
+<div class="label">빈칸 선택</div><div class="options" data-target="q2a">
+<button class="opt" data-ko="더 많은 업무량">heavier workloads</button><button class="opt" data-ko="더 긴 근무일">longer workdays</button><button class="opt" data-ko="고객 응대 시간 감소">lower customer availability</button><button class="opt" data-ko="의사소통 문제">communication problems</button></div>
+<textarea id="q2custom" placeholder="직접 입력 예: more pressure on employees"></textarea><input id="q2customKo" type="text" placeholder="한글 힌트 예: 직원에게 더 큰 압박">
+<div class="row"><button class="btn secondary" onclick="checkCustom(2,'q2a')">✨ Check My English</button><button class="btn ghost" onclick="listenAnswer(2)">🔊 Listen</button></div>
+<div class="ai-box hidden" id="ai2"></div><div class="answer" id="ans2"><strong>MY ANSWER</strong>아직 완성되지 않았습니다.</div>
+</section>
+
+<section class="card" id="question3">
+<div class="step">Q3</div><div class="q">What do you think determines whether it’s worth the trade-off?</div><div class="qkr">그 대가를 감수할 가치가 있는지는 무엇에 달려 있다고 생각하나요?</div>
+<div class="pattern">Whether it’s worth the trade-off depends on <span class="blank" id="q3a"></span>.</div>
+<div class="label">빈칸 선택</div><div class="options" data-target="q3a">
+<button class="opt" data-ko="어떻게 시행되는지">how it’s implemented</button><button class="opt" data-ko="회사 문화">the company culture</button><button class="opt" data-ko="직업의 종류">the type of job</button><button class="opt" data-ko="업무량을 어떻게 관리하는지">how the workload is managed</button></div>
+<textarea id="q3custom" placeholder="직접 입력 예: how flexible the company can be"></textarea><input id="q3customKo" type="text" placeholder="한글 힌트 예: 회사가 얼마나 유연하게 운영할 수 있는지">
+<div class="row"><button class="btn secondary" onclick="checkCustom(3,'q3a')">✨ Check My English</button><button class="btn ghost" onclick="listenAnswer(3)">🔊 Listen</button></div>
+<div class="ai-box hidden" id="ai3"></div><div class="answer" id="ans3"><strong>MY ANSWER</strong>아직 완성되지 않았습니다.</div>
+</section>
+
+<section class="card" id="question4">
+<div class="step">Q4</div><div class="q">Overall, what do you think?</div><div class="qkr">전반적으로 어떻게 생각하나요?</div>
+<div class="pattern">Overall, I feel that <span class="blank" id="q4a"></span>.</div>
+<div class="label">빈칸 선택</div><div class="options" data-target="q4a">
+<button class="opt" data-ko="제대로 시행하면 장점이 단점을 능가한다">its benefits outweigh its drawbacks when done right</button><button class="opt" data-ko="제대로 시행하지 않으면 단점이 장점을 능가한다">its drawbacks outweigh its benefits when done poorly</button><button class="opt" data-ko="그 대가를 감수할 가치가 있다">it’s worth the trade-off</button><button class="opt" data-ko="그 대가를 감수할 가치가 없다">it’s not worth the trade-off</button></div>
+<textarea id="q4custom" placeholder="직접 입력 예: it can work if companies manage it carefully"></textarea><input id="q4customKo" type="text" placeholder="한글 힌트 예: 회사가 신중히 운영한다면 효과가 있을 수 있다">
+<div class="row"><button class="btn secondary" onclick="checkCustom(4,'q4a')">✨ Check My English</button><button class="btn ghost" onclick="listenAnswer(4)">🔊 Listen</button></div>
+<div class="ai-box hidden" id="ai4"></div><div class="answer" id="ans4"><strong>MY ANSWER</strong>아직 완성되지 않았습니다.</div>
+</section>
+</section>
+
+<section class="card" id="script">
+<div class="step">STEP 3 · MY SCRIPT</div><div class="section-title">내 답이 자동으로 Script가 됩니다.</div>
+<div class="help">Q1~Q4가 모두 완성되면 자동 생성됩니다. 빠진 질문이 있으면 정확히 알려줍니다.</div>
+<div id="missingBox" class="warn">Question 1~4를 완성해주세요.</div>
+<textarea class="script-edit" id="scriptEdit" placeholder="My Script"></textarea>
+<textarea id="scriptKoEdit" placeholder="한글 Flip 힌트"></textarea>
+<div class="row"><button class="btn ghost" onclick="listenScript()">🔊 Listen to My Script</button><button class="btn secondary" onclick="saveEditedScript()">수정한 Script 저장</button></div>
+<div class="status" id="scriptStatus"></div>
+</section>
+
+<section class="card">
+<div class="step">STEP 4 · MY SCRIPT FLIP</div><div class="section-title">내가 만든 문장을 다시 꺼내 말해보세요.</div>
+<div class="help">한글을 보고 영어로 말한 뒤 Flip으로 확인하세요.</div>
+<div class="script-card" onclick="flipPractice()"><div class="script-num" id="practiceNum">MY SCRIPT</div><div class="script-korean" id="practiceKo">Script가 완성되면 자동으로 나타납니다.</div><div class="script-english hidden" id="practiceEn"></div><div class="tap" id="practiceTap">TAP TO FLIP</div></div>
+<div class="row"><button class="btn secondary" onclick="prevPractice()">← Prev</button><button class="btn ghost" onclick="speakPractice()">🔊 Listen</button><button class="btn primary" onclick="nextPractice()">Next →</button><div class="counter" id="practiceCount"></div></div>
+</section>
+
+<section class="card" id="record">
+<div class="step">SESSION 3 · FINAL SPEAKING</div><div class="section-title">🎙 My Script 기준으로 Final Speaking</div>
+<div class="help">녹음 시작 시 현재 저장된 My Script를 기준본으로 고정합니다. 제출하면 음성을 텍스트로 변환한 뒤 Script와 비교해 피드백합니다.</div>
+<div class="notice">Benefits → Cost → Trade-off → Overall Opinion</div>
+<button id="recordBtn" class="btn primary record" onclick="toggleRecording()">🎙 START RECORDING</button>
+<audio id="player" controls class="hidden"></audio>
+<div class="row"><button class="btn secondary" onclick="resetRecording()">↻ Record Again</button><button class="btn primary" id="submitBtn" onclick="submitRecording()">Submit for Feedback</button></div>
+<div class="status" id="recordStatus">아직 녹음하지 않았습니다.</div>
+<div class="feedback hidden" id="feedbackBox"></div>
+</section>
+</main></div>
+
+<script>
+const idioms=[
+{ko:'두 가지 장점을 모두 누리다',en:'the best of both worlds',ex:'A four-day workweek could offer the best of both worlds: better work-life balance and higher productivity.'},
+{ko:'대가가 따르다',en:'come at a cost',ex:'However, it may come at a cost, such as heavier workloads.'},
+{ko:'제대로 하면',en:'when done right',ex:'When done right, a four-day workweek can benefit both employees and employers.'},
+{ko:'그 대가를 감수할 가치가 있다',en:'worth the trade-off',ex:'Whether it is worth the trade-off depends on how companies implement it.'}
+];
+let idiomIndex=0,idiomFlipped=false;
+function renderIdiom(){const x=idioms[idiomIndex];idiomKr.textContent=x.ko;idiomEn.textContent=x.en;idiomEx.textContent=x.ex;idiomKr.classList.remove('hidden');idiomEn.classList.add('hidden');idiomEx.classList.add('hidden');idiomTap.textContent='TAP TO FLIP';idiomCount.textContent=(idiomIndex+1)+' / '+idioms.length;idiomFlipped=false}
+function flipIdiom(){idiomFlipped=!idiomFlipped;idiomKr.classList.toggle('hidden',idiomFlipped);idiomEn.classList.toggle('hidden',!idiomFlipped);idiomEx.classList.toggle('hidden',!idiomFlipped);idiomTap.textContent=idiomFlipped?'TAP TO SEE KOREAN':'TAP TO FLIP'}
+function prevIdiom(){idiomIndex=(idiomIndex-1+idioms.length)%idioms.length;renderIdiom()}function nextIdiom(){idiomIndex=(idiomIndex+1)%idioms.length;renderIdiom()}
+function speak(text){if(!text)return;if(!('speechSynthesis'in window)){alert('음성 재생을 지원하지 않는 브라우저입니다.');return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='en-US';u.rate=.9;speechSynthesis.speak(u)}
+function speakIdiom(){speak(idioms[idiomIndex].en+'. '+idioms[idiomIndex].ex)}
+
+const state={},koState={};
+document.querySelectorAll('.options').forEach(group=>{const target=group.dataset.target;group.querySelectorAll('.opt').forEach(btn=>btn.addEventListener('click',()=>{group.querySelectorAll('.opt').forEach(b=>b.classList.remove('on'));btn.classList.add('on');state[target]=btn.textContent.trim();koState[target]=btn.dataset.ko||'';document.getElementById(target).textContent=state[target];autoSaveFromState(target)}))});
+
+function qFromTarget(target){return Number(target.match(/\d/)[0])}
+function autoSaveFromState(target){const q=qFromTarget(target);saveQuestionIfComplete(q);updateScript()}
+function saveQuestionIfComplete(n){
+ let en='',ko='';
+ if(n===1){if(!state.q1a||!state.q1b)return;en=`It could offer the best of both worlds: ${state.q1a} and ${state.q1b}.`;ko=`주 4일 근무제는 ${koState.q1a}과(와) ${koState.q1b}이라는 두 가지 장점을 모두 제공할 수 있다.`}
+ if(n===2){if(!state.q2a)return;en=`It may come at a cost, such as ${state.q2a}.`;ko=`하지만 ${koState.q2a} 같은 대가가 따를 수 있다.`}
+ if(n===3){if(!state.q3a)return;en=`Whether it’s worth the trade-off depends on ${state.q3a}.`;ko=`그 대가를 감수할 가치가 있는지는 ${koState.q3a}에 달려 있다.`}
+ if(n===4){if(!state.q4a)return;en=`Overall, I feel that ${state.q4a}.`;ko=`전반적으로 나는 ${koState.q4a}고 생각한다.`}
+ localStorage.setItem('heart_aug_adv_q'+n,en);localStorage.setItem('heart_aug_adv_q'+n+'_ko',ko);
+ document.getElementById('ans'+n).innerHTML='<strong>MY ANSWER · AUTO SAVED</strong>'+en
+}
+async function checkCustom(n,target){
+ const input=document.getElementById('q'+n+'custom').value.trim();const ko=document.getElementById('q'+n+'customKo').value.trim();
+ if(!input)return alert('직접 만든 영어를 먼저 입력해주세요.');
+ const box=document.getElementById('ai'+n);box.classList.remove('hidden');box.innerHTML='<div class="ai-title">AI CHECK</div>확인 중...';
+ try{
+  const r=await fetch('/api/check-english',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:input,context:'A phrase or clause that will fill a blank in an advanced English conversation answer pattern.'})});
+  const d=await r.json();if(!r.ok)throw new Error(d.error||'API error');
+  box.innerHTML=`<div class="ai-title">AI CHECK</div><div><b>Original</b><br>${escapeHtml(d.original)}</div><br><div class="good"><b>Suggested</b><br>${escapeHtml(d.corrected)}</div><br><div>${escapeHtml(d.note)}</div><div class="row"><button class="btn primary" onclick='applyCustom(${n},"${target}",${JSON.stringify(d.corrected)},${JSON.stringify(ko)})'>Use corrected version</button><button class="btn secondary" onclick='applyCustom(${n},"${target}",${JSON.stringify(input)},${JSON.stringify(ko)})'>Keep my version</button></div>`;
+ }catch(e){box.innerHTML='<div class="ai-title">AI CHECK</div>API 연결을 확인해주세요: '+escapeHtml(e.message)}
+}
+function applyCustom(n,target,text,ko){state[target]=text;koState[target]=ko||'내가 직접 만든 내용';document.getElementById(target).textContent=text;const group=document.querySelector('.options[data-target="'+target+'"]');if(group)group.querySelectorAll('.opt').forEach(b=>b.classList.remove('on'));saveQuestionIfComplete(n);updateScript();document.getElementById('ai'+n).classList.add('hidden')}
+function listenAnswer(n){const en=localStorage.getItem('heart_aug_adv_q'+n);if(!en)return alert('Question '+n+'을 먼저 완성해주세요.');speak(en)}
+
+function updateScript(){
+ const ens=[],kos=[],missing=[];
+ for(let i=1;i<=4;i++){const en=localStorage.getItem('heart_aug_adv_q'+i),ko=localStorage.getItem('heart_aug_adv_q'+i+'_ko');if(!en)missing.push(i);else{ens.push(en);kos.push(ko||'')}}
+ if(missing.length){missingBox.classList.remove('hidden');missingBox.innerHTML=`<b>Question ${missing.join(', ')}을 완성해주세요.</b><br><button class="btn secondary" style="margin-top:8px" onclick="go('question${missing[0]}')">Question ${missing[0]}으로 이동</button>`;return}
+ missingBox.classList.add('hidden');
+ const en=ens.join('\n\n'),ko=kos.join('\n\n');scriptEdit.value=en;scriptKoEdit.value=ko;localStorage.setItem('heart_aug_adv_script',en);localStorage.setItem('heart_aug_adv_script_ko',ko);scriptStatus.textContent='✓ My Script 자동 저장 완료';preparePractice(en,ko)
+}
+function saveEditedScript(){const en=scriptEdit.value.trim(),ko=scriptKoEdit.value.trim();if(!en)return;localStorage.setItem('heart_aug_adv_script',en);localStorage.setItem('heart_aug_adv_script_ko',ko);scriptStatus.textContent='✓ 수정한 My Script 저장 완료';preparePractice(en,ko)}
+function listenScript(){speak(scriptEdit.value.trim()||localStorage.getItem('heart_aug_adv_script'))}
+
+let practiceItems=[],practiceIndex=0,practiceFlipped=false;
+function preparePractice(en,ko){en=en||localStorage.getItem('heart_aug_adv_script')||'';ko=ko||localStorage.getItem('heart_aug_adv_script_ko')||'';const ep=en.split(/\n\s*\n/).map(x=>x.trim()).filter(Boolean),kp=ko.split(/\n\s*\n/).map(x=>x.trim()).filter(Boolean);practiceItems=ep.map((x,i)=>({en:x,ko:kp[i]||'이 문장의 한국어 힌트를 확인하세요.'}));practiceIndex=0;renderPractice()}
+function renderPractice(){if(!practiceItems.length)return;const x=practiceItems[practiceIndex];practiceKo.textContent=x.ko;practiceEn.textContent=x.en;practiceKo.classList.remove('hidden');practiceEn.classList.add('hidden');practiceTap.textContent='TAP TO FLIP';practiceNum.textContent='MY SCRIPT · '+(practiceIndex+1);practiceCount.textContent=(practiceIndex+1)+' / '+practiceItems.length;practiceFlipped=false}
+function flipPractice(){if(!practiceItems.length)return;practiceFlipped=!practiceFlipped;practiceKo.classList.toggle('hidden',practiceFlipped);practiceEn.classList.toggle('hidden',!practiceFlipped);practiceTap.textContent=practiceFlipped?'TAP TO SEE KOREAN':'TAP TO FLIP'}
+function prevPractice(){if(!practiceItems.length)return;practiceIndex=(practiceIndex-1+practiceItems.length)%practiceItems.length;renderPractice()}function nextPractice(){if(!practiceItems.length)return;practiceIndex=(practiceIndex+1)%practiceItems.length;renderPractice()}function speakPractice(){if(practiceItems.length)speak(practiceItems[practiceIndex].en)}
+
+let recorder,chunks=[],audioBlob=null,audioURL='',recordingScript='';
+async function toggleRecording(){
+ if(!localStorage.getItem('heart_aug_adv_script')){updateScript();if(!localStorage.getItem('heart_aug_adv_script'))return}
+ if(recorder&&recorder.state==='recording'){recorder.stop();recordBtn.textContent='🎙 START RECORDING';return}
+ try{
+  recordingScript=localStorage.getItem('heart_aug_adv_script');
+  const stream=await navigator.mediaDevices.getUserMedia({audio:true});chunks=[];recorder=new MediaRecorder(stream);
+  recorder.ondataavailable=e=>chunks.push(e.data);recorder.onstop=()=>{audioBlob=new Blob(chunks,{type:recorder.mimeType||'audio/webm'});audioURL=URL.createObjectURL(audioBlob);player.src=audioURL;player.classList.remove('hidden');recordStatus.textContent='✓ 녹음 완료. 이 녹음은 현재 저장된 My Script를 기준으로 비교됩니다.';stream.getTracks().forEach(t=>t.stop())};
+  recorder.start();recordBtn.textContent='■ STOP RECORDING';recordStatus.textContent='● Recording...';
+ }catch(e){recordStatus.textContent='마이크 권한이 필요합니다.'}
+}
+function resetRecording(){audioBlob=null;audioURL='';player.src='';player.classList.add('hidden');feedbackBox.classList.add('hidden');recordStatus.textContent='다시 녹음할 준비가 되었습니다.'}
+
+async function submitRecording(){
+ if(!audioBlob)return alert('먼저 Final Speaking을 녹음해주세요.');
+ const script=recordingScript||localStorage.getItem('heart_aug_adv_script');submitBtn.disabled=true;recordStatus.textContent='음성을 분석하고 있습니다...';
+ try{
+  const tr=await fetch('/api/transcribe',{method:'POST',headers:{'Content-Type':audioBlob.type||'audio/webm'},body:audioBlob});
+  const td=await tr.json();if(!tr.ok)throw new Error(td.error||'Transcription failed');
+  const fr=await fetch('/api/feedback',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({script,transcript:td.text,studentId:localStorage.getItem('heartStudentId')||'',studentName:localStorage.getItem('heartStudentName')||'',className:localStorage.getItem('heartStudentClass')||'',topic:'August Advanced · Four-Day Workweek'})});
+  const fd=await fr.json();if(!fr.ok)throw new Error(fd.error||'Feedback failed');
+  feedbackBox.classList.remove('hidden');
+  feedbackBox.innerHTML=`<h3>Transcript</h3><p>${escapeHtml(td.text)}</p><h3>Script Match</h3><p>${escapeHtml(fd.match_summary)}</p><h3>잘한 점</h3><p>${escapeHtml(fd.strength)}</p><h3>중요한 교정</h3><ul>${fd.corrections.map(x=>'<li>'+escapeHtml(x)+'</li>').join('')}</ul><h3>다시 연습할 표현</h3><p>${escapeHtml(fd.practice_focus)}</p><h3>Natural Upgrade</h3><p>${escapeHtml(fd.upgraded_version)}</p>`;
+  recordStatus.textContent='✓ 피드백 완료. 다시 녹음하거나 학습을 완료하세요.';
+  localStorage.setItem('heart_aug_adv_last_transcript',td.text);localStorage.setItem('heart_aug_adv_last_feedback',JSON.stringify(fd));
+ }catch(e){recordStatus.textContent='API 분석 오류: '+e.message}finally{submitBtn.disabled=false}
+}
+function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+function escapeHtml(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+
+(function load(){renderIdiom();for(let i=1;i<=4;i++){const en=localStorage.getItem('heart_aug_adv_q'+i);if(en)document.getElementById('ans'+i).innerHTML='<strong>MY ANSWER · AUTO SAVED</strong>'+en}const en=localStorage.getItem('heart_aug_adv_script'),ko=localStorage.getItem('heart_aug_adv_script_ko');if(en){scriptEdit.value=en;scriptKoEdit.value=ko||'';preparePractice(en,ko)}updateScript()})();
+</script>
+</body></html>
