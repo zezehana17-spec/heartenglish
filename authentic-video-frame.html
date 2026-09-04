@@ -6,84 +6,78 @@
 <meta name="referrer" content="strict-origin-when-cross-origin" />
 <title>Heart English · Authentic Video</title>
 <style>
-:root{--bg:#f5f3ee;--card:#fff;--ink:#1d1d1b;--muted:#77756f;--line:#e8e4dc;--soft:#f0ede6;--accent:#1e1e1d;--heart:#b65b61}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.app{max-width:560px;margin:0 auto;padding:16px 14px 56px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.brand{font-size:12px;font-weight:900;letter-spacing:.09em}.badge{font-size:11px;padding:7px 10px;border-radius:999px;border:1px solid var(--line);background:#fff;color:#777}.hero{padding:10px 2px 4px}.hero h1{font-size:28px;line-height:1.12;margin:5px 0 6px}.hero p{font-size:14px;line-height:1.55;color:var(--muted);margin:0}.sectionLabel{font-size:11px;font-weight:900;letter-spacing:.08em;color:#8b8881;margin:18px 2px 9px}.rail{display:flex;gap:10px;overflow-x:auto;padding:1px 1px 8px;scrollbar-width:none}.rail::-webkit-scrollbar{display:none}.lessonCard{min-width:208px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:14px;cursor:pointer;box-shadow:0 5px 20px rgba(0,0,0,.035)}.lessonCard.active{outline:2px solid #222}.chip{display:inline-block;font-size:10px;font-weight:900;padding:6px 8px;border-radius:999px;background:var(--soft);color:#5f5d58}.expr{font-size:21px;font-weight:900;line-height:1.2;margin:10px 0 3px}.meaning{font-size:13px;color:var(--muted);line-height:1.4}.meta{font-size:11px;color:#999;margin-top:11px}.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:15px;margin-top:12px;box-shadow:0 8px 24px rgba(0,0,0,.035)}.video{width:100%;aspect-ratio:16/9;background:#111;border-radius:17px;overflow:hidden}.video iframe,.video>div{width:100%;height:100%}.label{font-size:11px;font-weight:900;letter-spacing:.08em;color:#8b8881;margin-top:14px}.title{font-size:22px;font-weight:900;line-height:1.25;margin:5px 0}.desc{font-size:14px;color:var(--muted);line-height:1.55}.context{font-size:13px;line-height:1.55;background:#f7f5f0;border-radius:14px;padding:11px 12px;margin-top:10px}.row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.btn{border:0;border-radius:14px;padding:13px 12px;font-size:14px;font-weight:800;cursor:pointer}.primary{background:var(--accent);color:#fff}.soft{background:var(--soft);color:#222}.ghost{background:#fff;border:1px solid var(--line);color:#222}.catch{background:#fbfaf7;border:1px solid var(--line);border-radius:15px;padding:14px;margin-top:10px;font-size:16px;line-height:1.6}.blank{display:inline-block;min-width:86px;border-bottom:2px solid #333;text-align:center}.answer{display:none;margin-top:9px;padding:10px 12px;background:#f1efe8;border-radius:12px;font-weight:800}.expressionBox{background:#222;color:#fff;border-radius:18px;padding:16px;margin-top:10px}.expressionBox .big{font-size:24px;font-weight:900}.expressionBox .ko{font-size:14px;opacity:.85;margin-top:3px}.expressionBox .nuance{font-size:13px;line-height:1.55;opacity:.72;margin-top:9px}.examples{display:grid;gap:8px;margin-top:10px}.example{background:#f7f5f0;border-radius:14px;padding:12px}.example .en{font-size:15px;font-weight:800}.example .kr{font-size:13px;color:#777;margin-top:4px}.mine{margin-top:10px;background:#fff;border:1px dashed #cfcac0;border-radius:14px;padding:12px;font-size:15px}.mineInput{width:100%;border:0;border-bottom:1px solid #aaa;background:transparent;font-size:16px;padding:7px 0;outline:none}.shadowBox{background:#f7f5f0;border-radius:15px;padding:13px;margin-top:10px}.shadowLine{font-size:15px;font-weight:800}.tiny{font-size:11px;color:#999;line-height:1.5;margin-top:8px}.aiCard{background:linear-gradient(180deg,#242424,#171717);color:white}.aiCard .label{color:#aaa}.scenario{font-size:14px;line-height:1.6;color:#ddd;margin-top:7px}.aiBubble{display:none;background:#fff;color:#222;border-radius:16px 16px 16px 5px;padding:12px 13px;margin-top:12px;font-size:14px;line-height:1.55}.aiHint{font-size:12px;color:#aaa;line-height:1.5;margin-top:9px}.recordStatus{font-size:12px;color:#85827c;margin-top:8px}.cc{font-size:11px;color:#98958e;line-height:1.5;margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+:root{--bg:#f6f4ef;--card:#fff;--ink:#1d1d1b;--muted:#77756f;--line:#e8e3da;--soft:#f0ede6;--dark:#1d1d1c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.app{max-width:620px;margin:0 auto;padding:16px 14px 60px}.top{display:flex;justify-content:space-between;align-items:center}.brand{font-size:12px;font-weight:900;letter-spacing:.09em}.badge{font-size:11px;padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;color:#777}.hero{padding:18px 2px 8px}.hero h1{font-size:28px;line-height:1.15;margin:0 0 8px}.hero p{font-size:14px;color:var(--muted);line-height:1.55;margin:0}.label{font-size:11px;font-weight:900;letter-spacing:.08em;color:#8d8a83;margin:18px 2px 9px}.cats{display:flex;gap:8px;overflow-x:auto;padding-bottom:5px;scrollbar-width:none}.cats::-webkit-scrollbar{display:none}.cat{white-space:nowrap;border:1px solid var(--line);background:#fff;color:#666;border-radius:999px;padding:10px 14px;font-size:13px;font-weight:800;cursor:pointer}.cat.active{background:var(--dark);color:#fff;border-color:var(--dark)}.list{display:grid;gap:11px;margin-top:10px}.item{background:#fff;border:1px solid var(--line);border-radius:19px;overflow:hidden;display:grid;grid-template-columns:122px 1fr;min-height:103px;cursor:pointer;box-shadow:0 5px 18px rgba(0,0,0,.03)}.thumb{width:122px;height:100%;min-height:103px;object-fit:cover;background:#ddd}.info{padding:13px 13px 11px}.mini{font-size:10px;font-weight:900;color:#999;letter-spacing:.04em}.expr{font-size:20px;font-weight:900;line-height:1.15;margin:5px 0 4px}.meaning{font-size:13px;color:#666;line-height:1.4}.meta{font-size:11px;color:#aaa;margin-top:7px}.empty{background:#fff;border:1px dashed var(--line);border-radius:18px;padding:28px 16px;text-align:center;color:#888;font-size:14px}.study{display:none}.back{border:0;background:none;padding:4px 0 12px;font-size:14px;font-weight:800;cursor:pointer}.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:15px;margin-top:12px;box-shadow:0 8px 24px rgba(0,0,0,.035)}.video{width:100%;aspect-ratio:16/9;background:#111;border-radius:17px;overflow:hidden}.video iframe,.video>div{width:100%;height:100%}.title{font-size:22px;font-weight:900;line-height:1.25;margin:5px 0}.desc{font-size:14px;color:var(--muted);line-height:1.55}.context{font-size:13px;line-height:1.55;background:#f7f5f0;border-radius:14px;padding:11px 12px;margin-top:10px}.btn{border:0;border-radius:14px;padding:13px 12px;font-size:14px;font-weight:800;cursor:pointer}.primary{background:var(--dark);color:#fff}.soft{background:var(--soft);color:#222}.ghost{background:#fff;border:1px solid var(--line)}.row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.catch{background:#fbfaf7;border:1px solid var(--line);border-radius:15px;padding:14px;margin-top:10px;font-size:16px;line-height:1.6}.answer{display:none;margin-top:9px;padding:10px 12px;background:#f1efe8;border-radius:12px;font-weight:800}.expressionBox{background:#222;color:#fff;border-radius:18px;padding:16px;margin-top:10px}.big{font-size:24px;font-weight:900}.ko{font-size:14px;opacity:.85;margin-top:3px}.nuance{font-size:13px;line-height:1.55;opacity:.72;margin-top:9px}.examples{display:grid;gap:8px;margin-top:10px}.example{background:#f7f5f0;border-radius:14px;padding:12px}.en{font-size:15px;font-weight:800}.kr{font-size:13px;color:#777;margin-top:3px}.ai{background:#202020;color:#fff}.ai .label{color:#aaa}.ai p{color:#ddd;font-size:14px;line-height:1.6}.bubble{display:none;background:#fff;color:#222;border-radius:15px;padding:12px;margin-top:10px}.tiny{font-size:11px;color:#999;line-height:1.5;margin-top:12px;border-top:1px solid var(--line);padding-top:10px}@media(max-width:430px){.item{grid-template-columns:108px 1fr}.thumb{width:108px}.expr{font-size:18px}}
 </style>
 </head>
 <body>
 <div class="app">
-  <div class="top"><div class="brand">HEART ENGLISH</div><div class="badge">Authentic Video · Prototype</div></div>
-  <div class="hero"><h1>짧게 보고,<br>진짜 영어를 써보세요.</h1><p>실제 영상 속 표현 하나를 듣고, 잡고, 따라 하고, 마지막에는 직접 말해봅니다.</p></div>
+  <div id="browse">
+    <div class="top"><div class="brand">HEART ENGLISH</div><div class="badge">Authentic Video</div></div>
+    <div class="hero"><h1>짧은 영상으로<br>진짜 영어를 익혀보세요.</h1><p>카테고리를 고르고, 실제 영상 속 표현 하나를 듣고 바로 써봅니다.</p></div>
+    <div class="label">CATEGORY</div>
+    <div id="cats" class="cats"></div>
+    <div class="label">VIDEOS</div>
+    <div id="list" class="list"></div>
+  </div>
 
-  <div class="sectionLabel">TODAY'S PICKS</div>
-  <div id="rail" class="rail"></div>
+  <div id="study" class="study">
+    <button class="back" onclick="backToList()">← 영상 목록으로</button>
+    <section class="card">
+      <div class="video"><div id="player"></div></div>
+      <div class="label">WATCH</div>
+      <div id="watchTitle" class="title"></div>
+      <div id="context" class="context"></div>
+      <div class="row"><button class="btn primary" onclick="playClip()">▶ 영상 보기</button><button class="btn soft" onclick="playClip()">↻ 다시 듣기</button></div>
+    </section>
 
-  <section class="card">
-    <div class="video"><div id="player"></div></div>
-    <div class="label">WATCH</div>
-    <div id="watchTitle" class="title"></div>
-    <div id="context" class="context"></div>
-    <div class="row"><button class="btn primary" onclick="playClip()">▶ 영상 보기</button><button class="btn soft" onclick="playClip()">↻ 다시 듣기</button></div>
-  </section>
+    <section class="card">
+      <div class="label">CATCH IT</div>
+      <div class="title" style="font-size:20px">표현이 들렸나요?</div>
+      <div id="catchPrompt" class="desc"></div>
+      <div id="dictation" class="catch"></div>
+      <button class="btn ghost" style="width:100%;margin-top:9px" onclick="showAnswer()">정답 보기</button>
+      <div id="answer" class="answer"></div>
+    </section>
 
-  <section class="card">
-    <div class="label">CATCH IT</div>
-    <div class="title" style="font-size:20px">표현이 들렸나요?</div>
-    <div id="catchPrompt" class="desc"></div>
-    <div id="dictation" class="catch"></div>
-    <button id="answerBtn" class="btn ghost" style="width:100%;margin-top:9px" onclick="showAnswer()">정답 보기</button>
-    <div id="answer" class="answer"></div>
-  </section>
+    <section class="card">
+      <div class="label">KEY EXPRESSION</div>
+      <div class="expressionBox"><div id="exprBig" class="big"></div><div id="meaning" class="ko"></div><div id="nuance" class="nuance"></div></div>
+      <div id="examples" class="examples"></div>
+      <div class="label">MAKE IT MINE</div>
+      <div id="makeItMine" class="catch"></div>
+    </section>
 
-  <section class="card">
-    <div class="label">KEY EXPRESSION</div>
-    <div class="title" style="font-size:20px">이 표현 하나는 가져가세요.</div>
-    <div class="expressionBox"><div id="exprBig" class="big"></div><div id="meaning" class="ko"></div><div id="nuance" class="nuance"></div></div>
-    <div id="examples" class="examples"></div>
-    <div class="label">MAKE IT MINE</div>
-    <div id="makeItMine" class="mine"></div>
-  </section>
-
-  <section class="card">
-    <div class="label">SHADOWING</div>
-    <div class="title" style="font-size:20px">짧은 구간만 따라 말해보세요.</div>
-    <div class="desc">전체 스크립트 대신, 오늘의 표현이 들어간 핵심 구간을 반복합니다.</div>
-    <div id="shadowBox" class="shadowBox"></div>
-    <div class="row"><button class="btn soft" onclick="playShadow()">▶ 핵심구간 듣기</button><button id="recBtn" class="btn primary" onclick="toggleRecording()">● 녹음하기</button></div>
-    <audio id="audio" controls style="display:none;width:100%;margin-top:10px"></audio>
-    <div id="recordStatus" class="recordStatus">아직 녹음하지 않았어요.</div>
-  </section>
-
-  <section class="card aiCard">
-    <div class="label">USE IT WITH AI</div>
-    <div class="title" style="font-size:20px">이제 진짜로 써볼 차례예요.</div>
-    <div id="aiScenario" class="scenario"></div>
-    <button class="btn" style="width:100%;margin-top:12px;background:#fff;color:#111" onclick="startAI()">AI 연습 시작</button>
-    <div id="aiBubble" class="aiBubble"></div>
-    <div id="aiHint" class="aiHint"></div>
-  </section>
-
-  <div class="cc">전체 스크립트는 앱에서 제공하지 않습니다. 필요한 경우 원본 영상의 YouTube CC 기능을 활용해 주세요.</div>
+    <section class="card ai">
+      <div class="label">USE IT WITH AI</div>
+      <div class="title" style="font-size:20px">마지막엔 직접 말해보세요.</div>
+      <p id="aiScenario"></p>
+      <button class="btn" style="width:100%;background:#fff;color:#111" onclick="startAI()">AI 연습 시작</button>
+      <div id="aiBubble" class="bubble"></div>
+    </section>
+    <div class="tiny">전체 스크립트는 앱에서 제공하지 않습니다. 필요한 경우 원본 영상의 YouTube CC 기능을 활용해 주세요.</div>
+  </div>
 </div>
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
 const lessons=[
- {id:'AV-0001',category:'Reaction',level:'Intermediate',duration:'20s',expression:'fair enough',meaning:'그건 인정 / 일리 있네 / 알겠어',nuance:'상대의 설명을 듣고 완전히 동의하지 않더라도 그 말은 이해되거나 수긍할 때 쓰는 짧은 반응.',videoId:'2f6kDd_SI0o',start:4,end:24,source:'Michael Pollan interview',context:'인터뷰어가 규칙을 설명하자 Michael Pollan이 짧게 받아들이며 반응하는 장면입니다.',catchPrompt:'상대의 설명을 듣고 Michael이 짧게 반응한 표현은?',dictation:'Okay. ________. I agree.',answer:'Fair enough',examples:[['Fair enough. I can see your point.','그건 일리 있네요. 무슨 말인지 알겠어요.'],['Fair enough. Let’s do it that way.','좋아요, 그럼 그렇게 하죠.'],['Fair enough. I hadn’t thought of that.','그건 인정이네요. 그 생각은 못 했어요.']],make:'Fair enough. I can see why ___.',shadowStart:13,shadowEnd:20,aiMode:'Role Play',aiScenario:'친구가 내일 아침 일찍 일정이 있어서 오늘 약속을 평소보다 일찍 끝내야 한다고 설명합니다.',aiOpening:'I may need to leave a little earlier tonight. I have an early meeting tomorrow.',aiHint:'fair enough를 사용해 이유를 받아들이고 한 문장 더 이어보세요.'},
- {id:'AV-0002',category:'Everyday / Social',level:'Intermediate',duration:'20s',expression:'go-to ~',meaning:'늘 찾는 / 애용하는 / 가장 자주 선택하는',nuance:'선택지가 많아도 습관적으로 가장 자주 찾거나 가장 믿고 쓰는 사람·물건·방법을 말할 때 사용.',videoId:'4Fhm9ulCwUU',start:530,end:550,source:'WIRED · Megan Thee Stallion',context:'자주 함께 작업하는 프로듀서들을 이야기하면서 go-to producers라고 표현하는 장면입니다.',catchPrompt:'자주 함께하는 프로듀서들을 어떤 표현으로 묶어 말했을까요?',dictation:'Those are my ______ producers.',answer:'go-to',examples:[['My go-to meal is usually pasta.','제가 늘 찾는 음식은 보통 파스타예요.'],['This is my go-to app for planning trips.','여행 계획할 때 제가 늘 쓰는 앱이에요.'],['She’s my go-to person when I need advice.','조언이 필요할 때 제가 늘 찾는 사람이에요.']],make:'My go-to ___ is ___ because ___.',shadowStart:538,shadowEnd:548,aiMode:'Question',aiScenario:'자신이 평소 가장 자주 찾는 음식이나 루틴을 이야기합니다.',aiOpening:'What’s your go-to meal when you’re busy?',aiHint:'go-to를 꼭 넣어서 답하고, 왜 자주 선택하는지도 덧붙여보세요.'},
- {id:'AV-0003',category:'Everyday / Work',level:'Intermediate',duration:'20s',expression:'works for me',meaning:'나한테 잘 맞다 / 난 그걸로 괜찮다',nuance:'방법이나 루틴이 자신에게 효과적일 때, 또는 일정·제안이 괜찮다고 동의할 때 자연스럽게 쓸 수 있는 표현.',videoId:'aXvDEmo6uS4',start:2620,end:2640,source:'Huberman Lab',context:'Andrew Huberman이 자신의 집중 루틴을 설명한 뒤, 자신에게는 그 방식이 잘 맞는다고 말하는 장면입니다.',catchPrompt:'“나한테는 이게 잘 맞는다”를 어떻게 표현했을까요?',dictation:'That’s what ______ for me.',answer:'works',examples:[['Morning workouts work for me.','저는 아침 운동이 잘 맞아요.'],['Friday afternoon works for me.','금요일 오후 괜찮아요.'],['That schedule works for me.','그 일정이면 저는 괜찮아요.']],make:'___ works for me because ___.',shadowStart:2624,shadowEnd:2634,aiMode:'Question',aiScenario:'자신에게 실제로 잘 맞는 공부나 업무 루틴을 설명합니다.',aiOpening:'What study routine works best for you?',aiHint:'works for me를 사용하고, 왜 잘 맞는지도 한 문장 이상 말해보세요.'}
+{id:'AV-0001',category:'Reaction',duration:'20s',expression:'fair enough',meaning:'그건 인정 / 일리 있네 / 알겠어',nuance:'상대의 설명을 듣고 완전히 동의하지 않더라도 그 말은 이해되거나 수긍할 때 쓰는 짧은 반응.',videoId:'2f6kDd_SI0o',start:4,end:24,source:'Michael Pollan interview',context:'인터뷰어가 규칙을 설명하자 Michael Pollan이 짧게 받아들이며 반응하는 장면입니다.',catchPrompt:'상대의 설명을 듣고 Michael이 짧게 반응한 표현은?',dictation:'Okay. ________. I agree.',answer:'Fair enough',examples:[['Fair enough. I can see your point.','그건 일리 있네요. 무슨 말인지 알겠어요.'],['Fair enough. Let’s do it that way.','좋아요, 그럼 그렇게 하죠.']],make:'Fair enough. I can see why ___.',aiScenario:'친구가 내일 아침 일찍 일정이 있어서 오늘 약속을 일찍 끝내야 한다고 설명합니다.',aiOpening:'I may need to leave a little earlier tonight. I have an early meeting tomorrow.'},
+{id:'AV-0002',category:'Everyday',duration:'20s',expression:'go-to ~',meaning:'늘 찾는 / 애용하는 / 가장 자주 선택하는',nuance:'선택지가 많아도 습관적으로 가장 자주 찾거나 가장 믿고 쓰는 사람·물건·방법을 말할 때 사용.',videoId:'4Fhm9ulCwUU',start:530,end:550,source:'WIRED · Megan Thee Stallion',context:'자주 함께 작업하는 프로듀서들을 이야기하면서 go-to producers라고 표현하는 장면입니다.',catchPrompt:'자주 함께하는 프로듀서들을 어떤 표현으로 묶어 말했을까요?',dictation:'Those are my ______ producers.',answer:'go-to',examples:[['My go-to meal is usually pasta.','제가 늘 찾는 음식은 보통 파스타예요.'],['This is my go-to app for planning trips.','여행 계획할 때 제가 늘 쓰는 앱이에요.']],make:'My go-to ___ is ___ because ___.',aiScenario:'자신이 평소 가장 자주 찾는 음식이나 루틴을 이야기합니다.',aiOpening:'What’s your go-to meal when you’re busy?'},
+{id:'AV-0003',category:'Business',duration:'20s',expression:'works for me',meaning:'나한테 잘 맞다 / 난 그걸로 괜찮다',nuance:'방법이나 루틴이 자신에게 효과적일 때, 또는 일정·제안이 괜찮다고 동의할 때 자연스럽게 쓸 수 있는 표현.',videoId:'aXvDEmo6uS4',start:2620,end:2640,source:'Huberman Lab',context:'Andrew Huberman이 자신의 집중 루틴을 설명한 뒤, 자신에게는 그 방식이 잘 맞는다고 말하는 장면입니다.',catchPrompt:'“나한테는 이게 잘 맞는다”를 어떻게 표현했을까요?',dictation:'That’s what ______ for me.',answer:'works',examples:[['Morning workouts work for me.','저는 아침 운동이 잘 맞아요.'],['Friday afternoon works for me.','금요일 오후 괜찮아요.']],make:'___ works for me because ___.',aiScenario:'자신에게 실제로 잘 맞는 공부나 업무 루틴을 설명합니다.',aiOpening:'What study routine works best for you?'}
 ];
-let current=0,player,recorder,chunks=[],stream;
-function onYouTubeIframeAPIReady(){player=new YT.Player('player',{videoId:lessons[0].videoId,playerVars:{playsinline:1,rel:0,cc_load_policy:0,origin:location.origin}});render();}
-function renderRail(){document.getElementById('rail').innerHTML=lessons.map((x,i)=>`<div class="lessonCard ${i===current?'active':''}" onclick="selectLesson(${i})"><span class="chip">${x.category}</span><div class="expr">${x.expression}</div><div class="meaning">${x.meaning}</div><div class="meta">${x.duration} · ${x.source}</div></div>`).join('')}
-function render(){const x=lessons[current];renderRail();document.getElementById('watchTitle').textContent=x.expression;document.getElementById('context').textContent=x.context;document.getElementById('catchPrompt').textContent=x.catchPrompt;document.getElementById('dictation').innerHTML=escapeHtml(x.dictation).replace('________','<span class="blank">&nbsp;</span>');document.getElementById('answer').textContent=x.answer;document.getElementById('answer').style.display='none';document.getElementById('answerBtn').style.display='block';document.getElementById('exprBig').textContent=x.expression;document.getElementById('meaning').textContent=x.meaning;document.getElementById('nuance').textContent=x.nuance;document.getElementById('examples').innerHTML=x.examples.map(e=>`<div class="example"><div class="en">${escapeHtml(e[0])}</div><div class="kr">${escapeHtml(e[1])}</div></div>`).join('');document.getElementById('makeItMine').innerHTML=`<div style="font-size:12px;color:#777;margin-bottom:5px">내 이야기로 바꿔보세요.</div><input class="mineInput" placeholder="${escapeHtml(x.make)}">`;document.getElementById('shadowBox').innerHTML=`<div class="shadowLine">${escapeHtml(x.answer)}</div><div class="tiny">${x.shadowEnd-x.shadowStart}초 핵심 구간 반복</div>`;document.getElementById('aiScenario').textContent=x.aiScenario;document.getElementById('aiBubble').style.display='none';document.getElementById('aiBubble').textContent=x.aiOpening;document.getElementById('aiHint').textContent=x.aiHint;if(player&&player.loadVideoById){try{player.cueVideoById({videoId:x.videoId,startSeconds:x.start,endSeconds:x.end})}catch(e){}}}
-function selectLesson(i){current=i;render();window.scrollTo({top:220,behavior:'smooth'})}
-function playClip(){const x=lessons[current];try{player.loadVideoById({videoId:x.videoId,startSeconds:x.start,endSeconds:x.end})}catch(e){}}
-function playShadow(){const x=lessons[current];try{player.loadVideoById({videoId:x.videoId,startSeconds:x.shadowStart,endSeconds:x.shadowEnd})}catch(e){}}
-function showAnswer(){document.getElementById('answer').style.display='block';document.getElementById('answerBtn').style.display='none'}
-function startAI(){document.getElementById('aiBubble').style.display='block'}
-async function toggleRecording(){const btn=document.getElementById('recBtn'),status=document.getElementById('recordStatus');if(recorder&&recorder.state==='recording'){recorder.stop();btn.textContent='● 다시 녹음';return}try{stream=await navigator.mediaDevices.getUserMedia({audio:true});chunks=[];recorder=new MediaRecorder(stream);recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};recorder.onstop=()=>{const blob=new Blob(chunks,{type:recorder.mimeType||'audio/webm'});const audio=document.getElementById('audio');audio.src=URL.createObjectURL(blob);audio.style.display='block';stream.getTracks().forEach(t=>t.stop());status.textContent='녹음 완료 · 내 목소리를 들어보세요.'};recorder.start();btn.textContent='■ 녹음 끝내기';status.textContent='녹음 중...'}catch(e){status.textContent='마이크 권한을 허용해주세요.'}}
-function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-renderRail();
+const categories=['전체','Everyday','Travel','Business','Reaction'];
+let activeCat='전체',current=0,player;
+function renderCats(){document.getElementById('cats').innerHTML=categories.map(c=>`<button class="cat ${c===activeCat?'active':''}" onclick="setCat('${c}')">${c}</button>`).join('')}
+function setCat(c){activeCat=c;renderCats();renderList()}
+function renderList(){const arr=lessons.filter(x=>activeCat==='전체'||x.category===activeCat);const el=document.getElementById('list');if(!arr.length){el.innerHTML='<div class="empty">이 카테고리는 아직 준비 중이에요.<br>DB에 영상이 추가되면 자동으로 여기 뜹니다.</div>';return}el.innerHTML=arr.map(x=>{const i=lessons.findIndex(v=>v.id===x.id);return `<div class="item" onclick="openLesson(${i})"><img class="thumb" src="https://img.youtube.com/vi/${x.videoId}/hqdefault.jpg" alt=""><div class="info"><div class="mini">${x.category} · ${x.duration}</div><div class="expr">${x.expression}</div><div class="meaning">${x.meaning}</div><div class="meta">${x.source}</div></div></div>`}).join('')}
+function onYouTubeIframeAPIReady(){}
+function openLesson(i){current=i;document.getElementById('browse').style.display='none';document.getElementById('study').style.display='block';if(player){player.destroy()}player=new YT.Player('player',{videoId:lessons[i].videoId,playerVars:{playsinline:1,rel:0,cc_load_policy:0,start:lessons[i].start,end:lessons[i].end,origin:location.origin}});renderStudy();window.scrollTo({top:0,behavior:'smooth'})}
+function backToList(){document.getElementById('study').style.display='none';document.getElementById('browse').style.display='block';window.scrollTo({top:0,behavior:'smooth'})}
+function renderStudy(){const x=lessons[current];watchTitle.textContent=x.expression;context.textContent=x.context;catchPrompt.textContent=x.catchPrompt;dictation.textContent=x.dictation;answer.style.display='none';answer.textContent=x.answer;exprBig.textContent=x.expression;meaning.textContent=x.meaning;nuance.textContent=x.nuance;examples.innerHTML=x.examples.map(v=>`<div class="example"><div class="en">${v[0]}</div><div class="kr">${v[1]}</div></div>`).join('');makeItMine.textContent=x.make;aiScenario.textContent=x.aiScenario;aiBubble.style.display='none';aiBubble.textContent=x.aiOpening}
+function playClip(){const x=lessons[current];try{player.seekTo(x.start,true);player.playVideo()}catch(e){}}
+function showAnswer(){answer.style.display='block'}
+function startAI(){aiBubble.style.display='block'}
+renderCats();renderList();
 </script>
 </body>
 </html>
