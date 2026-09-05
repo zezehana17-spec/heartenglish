@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="강남 YBM 성인 영어회화 Heart English — 아는 영어에서 말하는 영어로." />
+  <title>Heart English | 강남 YBM 성인 영어회화</title>
+  <style>
+    :root{
+      --cream:#f4f0e6;
+      --cream2:#f8f5ed;
+      --paper:#fffdf8;
+      --green:#294f47;
+      --green2:#1e403a;
+      --gold:#d59c2e;
+      --gold-soft:#f4e4bf;
+      --ink:#26332f;
+      --muted:#69716e;
+      --line:#dfd9cc;
+      --shadow:0 16px 40px rgba(36,56,50,.08);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--cream2);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+    header{position:sticky;top:0;z-index:30;background:rgba(249,247,241,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(41,79,71,.08)}
+    .nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-family:Georgia,"Times New Roman",serif;font-size:26px;font-weight:700;letter-spacing:-.02em;color:var(--green)}
+    .navlinks{display:flex;align-items:center;gap:28px;font-size:15px;font-weight:650;color:#2f3b37}
+    .navlinks a:hover{color:var(--green)}
+    .cta{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:13px 22px;font-weight:750;transition:.2s ease}
+    .cta.gold{background:var(--gold);color:#fff;box-shadow:0 8px 20px rgba(213,156,46,.2)}
+    .cta.gold:hover{transform:translateY(-1px)}
+    .cta.green{background:var(--green);color:#fff}
+    .menu{display:none;font-size:28px;color:var(--green)}
+
+    .hero{padding:102px 0 92px;text-align:center;background:linear-gradient(180deg,#f4f0e6 0%,#f7f4ec 100%)}
+    .kicker{font-size:15px;letter-spacing:.28em;font-weight:800;color:var(--green);margin-bottom:28px}
+    .hero h1{margin:0 auto;max-width:820px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(48px,6.8vw,76px);line-height:1.12;letter-spacing:-.04em;color:var(--green)}
+    .hero p{max-width:650px;margin:34px auto 32px;font-size:22px;font-weight:650;color:#2f3734}
+    .chips{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+    .chip{border:1px solid var(--gold);border-radius:999px;padding:9px 16px;background:#f9f2df;color:#9d6f16;font-size:14px;font-weight:800}
+
+    section{padding:100px 0}
+    .section-label{font-size:14px;letter-spacing:.25em;font-weight:850;color:var(--green);margin-bottom:22px}
+    .section-title{font-family:Georgia,"Times New Roman",serif;font-size:clamp(36px,5vw,58px);line-height:1.15;color:var(--green);letter-spacing:-.035em;margin:0 0 24px}
+    .section-lead{max-width:760px;font-size:20px;font-weight:630;margin:0 0 18px;color:#2c3834}
+    .section-copy{max-width:760px;font-size:17px;color:#49524f;margin:0 0 52px}
+    .why{background:#fbfaf6}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+    .feature{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:32px;box-shadow:var(--shadow);min-height:210px}
+    .feature-no{position:absolute;top:24px;right:24px;font-family:Georgia,serif;color:#d6ceb9;font-size:42px;line-height:1}
+    .feature .icon{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:#f1e2bc;color:#986d1f;font-size:26px;margin-bottom:24px}
+    .feature h3{margin:0 0 10px;font-family:Georgia,serif;font-size:24px;color:var(--green)}
+    .feature p{margin:0;color:#666f6b;font-size:15px;max-width:88%}
+
+    .app{background:var(--green);color:#fff;overflow:hidden}
+    .app .section-label{color:#f3c25f}
+    .app .section-title{color:#fff;max-width:720px}
+    .app .section-lead,.app .section-copy{color:#e5ece9}
+    .app-layout{display:grid;grid-template-columns:.95fr 1.05fr;gap:64px;align-items:center}
+    .phone-wrap{display:flex;justify-content:center}
+    .phone{width:min(360px,88vw);border-radius:40px;background:#171d1b;border:10px solid #1f2523;padding:10px;box-shadow:0 30px 60px rgba(0,0,0,.3)}
+    .screen{border-radius:27px;background:#f8f5ed;min-height:650px;padding:28px 20px;color:var(--ink);overflow:hidden}
+    .screen-top{display:flex;align-items:center;justify-content:space-between;font-weight:800;color:var(--green);margin-bottom:28px}
+    .today{background:#fff;border-radius:20px;padding:22px;border:1px solid #e9e2d5;margin-bottom:16px}
+    .today small{font-weight:850;color:#ad7a1d;letter-spacing:.08em}
+    .today h4{font-size:22px;margin:8px 0 4px;color:var(--green)}
+    .mini{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .mini div{background:#fff;border:1px solid #e9e2d5;border-radius:16px;padding:16px;font-weight:700;font-size:14px}
+    .progress{margin-top:16px;background:#e8efe9;border-radius:18px;padding:18px}
+    .bar{height:8px;background:#d5dfd8;border-radius:999px;overflow:hidden;margin-top:10px}
+    .bar span{display:block;width:68%;height:100%;background:var(--gold)}
+    .app-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:32px 0}
+    .app-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:18px}
+    .app-card b{display:block;color:#fff;margin-bottom:4px}
+    .app-card span{font-size:14px;color:#cfdbd6}
+
+    .journey{background:#f6f1e6}
+    .journey-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+    .step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;min-height:170px}
+    .step strong{display:block;color:var(--gold);font-size:13px;letter-spacing:.1em;margin-bottom:12px}
+    .step h3{font-family:Georgia,serif;color:var(--green);font-size:22px;margin:0 0 10px}
+    .step p{font-size:14px;color:#66706c;margin:0}
+
+    .final{background:#fbfaf6;text-align:center}
+    .final .section-title{max-width:760px;margin-left:auto;margin-right:auto}
+    .final p{max-width:680px;margin:0 auto 28px;color:#5c6662;font-size:17px}
+    .actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+    footer{background:#173731;color:#c7d3cf;padding:34px 0;font-size:13px}
+    footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+    footer b{color:#fff}
+
+    @media(max-width:840px){
+      .navlinks{display:none}.menu{display:block}
+      .hero{padding:78px 0 70px}.hero p{font-size:18px}
+      section{padding:74px 0}.grid2,.app-layout{grid-template-columns:1fr}.app-layout{gap:46px}
+      .journey-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:560px){
+      .wrap{padding:0 18px}.nav{height:70px}.brand{font-size:22px}
+      .hero h1{font-size:44px}.kicker{font-size:12px;letter-spacing:.22em}
+      .grid2,.app-cards,.journey-grid{grid-template-columns:1fr}
+      .feature{padding:26px}.section-lead{font-size:18px}.section-copy{font-size:15px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">Heart English</a>
+    <nav class="navlinks" aria-label="주요 메뉴">
+      <a href="#why">수업 특징</a>
+      <a href="#app">학습 앱</a>
+      <a href="#journey">학습 과정</a>
+      <a href="https://heartenglish.co.kr" target="_blank" rel="noopener">무료 자료</a>
+      <a href="https://app.heartenglish.co.kr" target="_blank" rel="noopener">앱 열기</a>
+      <a class="cta gold" href="https://heartenglish.co.kr/Inquire" target="_blank" rel="noopener">수업 상담하기</a>
+    </nav>
+    <div class="menu" aria-hidden="true">☰</div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="kicker">하나로 트이는 영어</div>
+      <h1>아는 영어에서,<br>말하는 영어로.</h1>
+      <p>더 많이 아는 것이 아니라, 알고 있는 영어를<br>실제로 말할 수 있게 만드는 수업입니다.</p>
+      <div class="chips">
+        <span class="chip">강남 YBM</span>
+        <span class="chip">12년+ 성인회화</span>
+        <span class="chip">미국 TESOL 석사</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" id="why">
+    <div class="wrap">
+      <div class="section-label">WHY HEART ENGLISH</div>
+      <h2 class="section-title">많이 배우는 수업보다,<br>많이 말하는 수업.</h2>
+      <p class="section-lead">수업 시간에 가장 많이 말해야 하는 사람은 강사가 아니라 학생입니다.</p>
+      <p class="section-copy">Heart English는 표현을 설명하는 데서 끝나지 않습니다. 배운 영어를 자신의 경험과 생각에 연결하고, 실제 대화 속에서 반복해서 사용하며 자연스럽게 말할 수 있도록 설계된 수업입니다.</p>
+      <div class="grid2">
+        <article class="feature">
+          <div class="feature-no">01</div><div class="icon">♙</div>
+          <h3>1:1 대화 중심</h3>
+          <p>그룹 수업이지만 실제 연습은 1:1 대화를 중심으로 진행됩니다.</p>
+        </article>
+        <article class="feature">
+          <div class="feature-no">02</div><div class="icon">☁</div>
+          <h3>영어가 막히는 이유를 찾는 피드백</h3>
+          <p>단순한 문법 교정이 아니라 말이 막히는 지점을 파악하고 다음 발화를 설계합니다.</p>
+        </article>
+        <article class="feature">
+          <div class="feature-no">03</div><div class="icon">↻</div>
+          <h3>수업에서 끝나지 않는 반복</h3>
+          <p>배운 표현을 복습하고 다시 말하며 아는 영어를 실제 사용 가능한 영어로 바꿉니다.</p>
+        </article>
+        <article class="feature">
+          <div class="feature-no">04</div><div class="icon">✦</div>
+          <h3>나에게 연결되는 콘텐츠</h3>
+          <p>업무, 여행, 일상, 관심사와 목표를 반영해 내가 실제로 쓸 영어를 연습합니다.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="app" id="app">
+    <div class="wrap app-layout">
+      <div>
+        <div class="section-label">HEART ENGLISH APP</div>
+        <h2 class="section-title">수업에서 배운 영어,<br>앱에서 진짜 내 영어로.</h2>
+        <p class="section-lead">수업을 듣고 끝나는 것이 아니라, 내가 실제로 말할 수 있을 때까지 이어집니다.</p>
+        <p class="section-copy">다시 듣고 → 바로 말해보고 → 롤플레이하고 → 녹음하면서, 배운 표현을 내 상황과 연결합니다. 로그인한 학생에게는 목표와 학습 상황에 맞춘 개인화 학습이 제공됩니다.</p>
+        <div class="app-cards">
+          <div class="app-card"><b>Today for You</b><span>오늘 나에게 필요한 학습</span></div>
+          <div class="app-card"><b>My Course</b><span>목표와 상황에 맞춘 개인 코스</span></div>
+          <div class="app-card"><b>Speaking Practice</b><span>배운 표현으로 바로 말하기</span></div>
+          <div class="app-card"><b>Recording & Feedback</b><span>녹음하고 피드백 받기</span></div>
+          <div class="app-card"><b>Self Study</b><span>수업 밖에서도 이어지는 복습</span></div>
+          <div class="app-card"><b>Progress</b><span>내 말하기 변화와 학습 기록</span></div>
+        </div>
+        <a class="cta gold" href="https://app.heartenglish.co.kr" target="_blank" rel="noopener">Heart English App 열기 →</a>
+      </div>
+      <div class="phone-wrap" aria-label="Heart English App 화면 예시">
+        <div class="phone">
+          <div class="screen">
+            <div class="screen-top"><span>Heart English</span><span>☰</span></div>
+            <div class="today">
+              <small>TODAY FOR YOU · 8 MIN</small>
+              <h4>오늘은 이 표현을<br>바로 말해볼까요?</h4>
+              <p style="margin:8px 0 0;color:#69716e;font-size:14px">지난 수업에서 배운 표현을 다시 꺼내 말해보세요.</p>
+            </div>
+            <div class="mini">
+              <div>▶ Listen<br><small>다시 듣기</small></div>
+              <div>↻ Quick Response<br><small>바로 말하기</small></div>
+              <div>☁ Role Play<br><small>대화 연습</small></div>
+              <div>● Recording<br><small>내 목소리 녹음</small></div>
+            </div>
+            <div class="progress"><b>이번 주 Progress</b><div class="bar"><span></span></div><small>학습 목표의 68% 완료</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="journey" id="journey">
+    <div class="wrap">
+      <div class="section-label">FROM CLASS TO REAL SPEAKING</div>
+      <h2 class="section-title">배운 표현을<br>실제로 쓰게 되는 과정</h2>
+      <p class="section-copy">수업과 앱을 하나의 학습 흐름으로 연결합니다. Heart English의 목표는 ‘알았다’에서 끝나는 것이 아니라 ‘말했다’까지 가는 것입니다.</p>
+      <div class="journey-grid">
+        <div class="step"><strong>STEP 01</strong><h3>Learn</h3><p>수업에서 표현과 상황을 이해합니다.</p></div>
+        <div class="step"><strong>STEP 02</strong><h3>Retrieve</h3><p>한글 또는 상황을 보고 표현을 직접 꺼내봅니다.</p></div>
+        <div class="step"><strong>STEP 03</strong><h3>Speak</h3><p>대화와 롤플레이에서 내 경험과 생각을 말합니다.</p></div>
+        <div class="step"><strong>STEP 04</strong><h3>Repeat</h3><p>녹음과 피드백을 통해 다시 말하고 내 표현으로 만듭니다.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <div class="section-label">START SPEAKING</div>
+      <h2 class="section-title">영어를 더 많이 외우기보다,<br>지금 알고 있는 영어부터 말해보세요.</h2>
+      <p>강남 YBM Heart English 수업과 학습 앱이 수업 안팎의 말하기를 하나로 연결합니다.</p>
+      <div class="actions">
+        <a class="cta green" href="https://heartenglish.co.kr/Inquire" target="_blank" rel="noopener">수업 시간표·상담 보기</a>
+        <a class="cta gold" href="https://app.heartenglish.co.kr" target="_blank" rel="noopener">Heart English App 열기</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Heart English</b><br>아는 영어에서 말하는 영어로.</div>
+    <div>© 2026 Heart English. All rights reserved.</div>
+  </div>
+</footer>
+</body>
+</html>
