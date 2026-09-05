@@ -8,12 +8,19 @@ export default async function handler(req,res){
     const r=await fetch('https://api.openai.com/v1/audio/speech',{
       method:'POST',
       headers:{Authorization:`Bearer ${apiKey}`,'Content-Type':'application/json'},
-      body:JSON.stringify({model:'gpt-4o-mini-tts',voice:'coral',input:text,format:'mp3'})
+      body:JSON.stringify({
+        model:'gpt-4o-mini-tts',
+        voice:'coral',
+        input:text,
+        response_format:'mp3',
+        instructions:'Speak clearly and naturally for an adult English learner. Normal conversational speed.'
+      })
     });
     if(!r.ok){const d=await r.text();return res.status(r.status).json({error:d||'TTS failed'});}
     const ab=await r.arrayBuffer();
     res.setHeader('Content-Type','audio/mpeg');
     res.setHeader('Cache-Control','public, max-age=86400');
+    res.setHeader('Content-Length',String(ab.byteLength));
     return res.status(200).send(Buffer.from(ab));
   }catch(e){return res.status(500).json({error:String(e?.message||e)});}
 }
