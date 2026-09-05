@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<title>Heart English · Video Study Test</title>
+<style>
+:root{--bg:#f6f5f1;--card:#fff;--ink:#171717;--muted:#74746f;--line:#e7e6df;--soft:#f0efe9;--accent:#1e1e1e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.app{max-width:560px;margin:0 auto;padding:18px 14px 48px}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.brand{font-size:12px;font-weight:900;letter-spacing:.08em}.pill{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 10px;font-size:12px;color:#666}.duration{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:10px 0 14px}.duration button{padding:10px 5px;border-radius:12px;border:1px solid var(--line);background:#fff;font-size:12px;font-weight:800;color:#777}.duration button.active{background:#1f1f1f;color:#fff;border-color:#1f1f1f}.card{background:#fff;border:1px solid #ecebe5;border-radius:22px;padding:15px;margin-bottom:12px;box-shadow:0 8px 24px rgba(0,0,0,.04)}.videoWrap{display:flex;justify-content:center}.video{width:min(100%,290px);aspect-ratio:9/16;background:#111;border-radius:18px;overflow:hidden}.video iframe,.video>div{width:100%;height:100%}.label{font-size:11px;font-weight:900;letter-spacing:.08em;color:#8b8b85;margin-top:14px}.title{font-size:24px;line-height:1.25;font-weight:900;margin:5px 0}.desc{font-size:14px;color:var(--muted);line-height:1.55}.btn{border:0;border-radius:14px;padding:13px 12px;font-size:14px;font-weight:800;cursor:pointer}.btn.primary{background:var(--accent);color:#fff}.btn.soft{background:var(--soft);color:#222}.btn.ghost{background:#fff;border:1px solid var(--line);color:#222}.full{width:100%}.row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.scriptBox{background:#faf9f6;border:1px solid var(--line);border-radius:16px;padding:14px;margin-top:10px}.scriptLine{font-size:16px;line-height:1.65;padding:8px 0;border-bottom:1px dashed #e5e3dc}.scriptLine:last-child{border-bottom:0}.blank{display:inline-block;min-width:74px;border-bottom:2px solid #222;text-align:center;color:#aaa;font-weight:800;letter-spacing:.04em}.modeTabs{display:none;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:10px}.modeTabs button{border:1px solid var(--line);background:#fff;border-radius:11px;padding:10px 6px;font-size:12px;font-weight:800;color:#666}.modeTabs button.active{background:#222;color:#fff;border-color:#222}.korean{color:#777;font-size:14px;line-height:1.55;margin-top:3px}.keyGrid{display:grid;gap:8px;margin-top:10px}.key{background:#f5f4ef;border-radius:14px;padding:12px}.key strong{display:block;font-size:16px;margin-bottom:3px}.key span{font-size:13px;color:#6f6f6a}.shadowScript{display:none;background:#f5f4ef;border-radius:14px;padding:12px;margin-top:10px;font-size:14px;line-height:1.65}.recordStatus,.transcript{font-size:13px;color:#6e6e69;line-height:1.5;margin-top:9px}.transcript{display:none;background:#f5f4ef;color:#222;padding:11px;border-radius:12px}.hint{font-size:12px;color:#8a8a84;line-height:1.5;margin-top:10px}.tiny{font-size:11px;color:#999;margin-top:8px}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="top"><div class="brand">HEART ENGLISH</div><div class="pill">Video Study · Test</div></div>
+  <div class="duration"><button class="active">10초 Quick</button><button>30초 Context</button><button>1분 Story</button><button>2분 Deep</button></div>
+
+  <section class="card">
+    <div class="videoWrap"><div class="video"><div id="watchPlayer"></div></div></div>
+    <div class="label">WATCH</div>
+    <div class="title">걸어서 갈 만해요?</div>
+    <div class="desc">먼저 전체 영상을 그냥 들어보세요. 처음에는 스크립트를 보지 않습니다.</div>
+    <div class="row"><button class="btn primary" onclick="playWatch()">▶ 처음부터 보기</button><button class="btn soft" onclick="playWatch()">↻ 다시 듣기</button></div>
+  </section>
+
+  <section class="card">
+    <div class="label">DICTATION · FULL SCRIPT</div>
+    <div class="title" style="font-size:20px">들린 만큼 채워보세요.</div>
+    <div class="desc">따로 문제를 여러 개 만들지 않고, 영상 전체 스크립트가 그대로 받아쓰기 학습지가 됩니다.</div>
+    <div id="scriptBox" class="scriptBox"></div>
+    <button id="answerBtn" class="btn primary full" style="margin-top:10px" onclick="revealAnswer()">정답 보기 → Full Script</button>
+    <div id="modeTabs" class="modeTabs">
+      <button id="mEn" class="active" onclick="setMode('en')">English</button>
+      <button id="mKo" onclick="setMode('ko')">한국어</button>
+      <button id="mBoth" onclick="setMode('both')">English + 한국어</button>
+    </div>
+    <div class="tiny">정답을 누르면 같은 자리가 Full Script로 바뀌고, 보기 방식만 선택합니다.</div>
+  </section>
+
+  <section class="card">
+    <div class="label">KEY ENGLISH</div>
+    <div class="title" style="font-size:20px">이 영상에서 가져갈 표현</div>
+    <div class="keyGrid">
+      <div class="key"><strong>within walking distance</strong><span>걸어서 갈 만한 거리 안에</span></div>
+      <div class="key"><strong>on foot</strong><span>걸어서 · 도보로</span></div>
+      <div class="key"><strong>walkable</strong><span>걸어갈 만한, 도보 이동이 가능한</span></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="label">SHADOWING</div>
+    <div class="title" style="font-size:20px">마지막은 영상 전체로</div>
+    <div class="desc">문장마다 녹음하지 않고, 마지막에 전체 영상을 보며 한 번에 따라 말합니다.</div>
+    <div class="videoWrap" style="margin-top:12px"><div class="video"><div id="shadowPlayer"></div></div></div>
+    <div class="row"><button class="btn soft" onclick="playShadow()">▶ 전체 재생</button><button id="scriptToggle" class="btn ghost" onclick="toggleShadowScript()">Script 보기</button></div>
+    <div id="shadowScript" class="shadowScript"></div>
+    <button id="recBtn" class="btn primary full" style="margin-top:10px" onclick="toggleRecording()">● 전체 Shadowing 녹음</button>
+    <audio id="audio" controls style="display:none;width:100%;margin-top:10px"></audio>
+    <div id="recordStatus" class="recordStatus">아직 녹음하지 않았어요.</div>
+    <div id="transcript" class="transcript"></div>
+    <div class="hint">학생은 필요할 때 스크립트를 켜고, 익숙해지면 끈 상태로 다시 Shadowing 합니다.</div>
+  </section>
+</div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+const VIDEO_ID='V4wlAGWsYWw';
+const lines=[
+  {en:'Is it within walking distance?',ko:'걸어서 갈 만한 거리인가요?',dict:'Is it within ________ distance?'},
+  {en:'Can I walk there from here?',ko:'여기서 걸어갈 수 있나요?',dict:'Can I ________ there from here?'},
+  {en:'Is it walkable from here?',ko:'여기서 걸어갈 만한가요?',dict:'Is it ________ from here?'},
+  {en:'How long does it take on foot?',ko:'걸어서 얼마나 걸려요?',dict:'How long does it take ________ foot?'},
+  {en:'Is it too far to walk?',ko:'걸어가기엔 너무 먼가요?',dict:'Is it too far to ________?'}
+];
+let watchPlayer,shadowPlayer,revealed=false,currentMode='en';
+function onYouTubeIframeAPIReady(){
+  const vars={playsinline:1,rel:0,cc_load_policy:0,origin:location.origin};
+  watchPlayer=new YT.Player('watchPlayer',{videoId:VIDEO_ID,playerVars:vars});
+  shadowPlayer=new YT.Player('shadowPlayer',{videoId:VIDEO_ID,playerVars:vars});
+}
+function playWatch(){try{watchPlayer.seekTo(0,true);watchPlayer.playVideo()}catch(e){}}
+function playShadow(){try{shadowPlayer.seekTo(0,true);shadowPlayer.playVideo()}catch(e){}}
+function renderScript(){
+  const box=document.getElementById('scriptBox');
+  if(!revealed){
+    box.innerHTML=lines.map(x=>'<div class="scriptLine">'+escapeHtml(x.dict).replace(/________/g,'<span class="blank">&nbsp;</span>')+'</div>').join('');
+    return;
+  }
+  if(currentMode==='en') box.innerHTML=lines.map(x=>'<div class="scriptLine">'+escapeHtml(x.en)+'</div>').join('');
+  if(currentMode==='ko') box.innerHTML=lines.map(x=>'<div class="scriptLine">'+escapeHtml(x.ko)+'</div>').join('');
+  if(currentMode==='both') box.innerHTML=lines.map(x=>'<div class="scriptLine"><div>'+escapeHtml(x.en)+'</div><div class="korean">'+escapeHtml(x.ko)+'</div></div>').join('');
+}
+function revealAnswer(){
+  revealed=true;currentMode='en';renderScript();
+  document.getElementById('answerBtn').style.display='none';
+  document.getElementById('modeTabs').style.display='grid';
+  setMode('en');
+}
+function setMode(mode){
+  if(!revealed)return;currentMode=mode;renderScript();
+  ['mEn','mKo','mBoth'].forEach(id=>document.getElementById(id).classList.remove('active'));
+  document.getElementById(mode==='en'?'mEn':mode==='ko'?'mKo':'mBoth').classList.add('active');
+}
+function toggleShadowScript(){
+  const el=document.getElementById('shadowScript');const btn=document.getElementById('scriptToggle');
+  const open=el.style.display==='block';
+  if(open){el.style.display='none';btn.textContent='Script 보기';return}
+  el.innerHTML=lines.map(x=>escapeHtml(x.en)).join('<br>');el.style.display='block';btn.textContent='Script 숨기기';
+}
+let recorder,chunks=[],stream;
+async function toggleRecording(){
+  const btn=document.getElementById('recBtn'),status=document.getElementById('recordStatus');
+  if(recorder&&recorder.state==='recording'){recorder.stop();btn.textContent='● 다시 녹음';return}
+  try{
+    stream=await navigator.mediaDevices.getUserMedia({audio:true});chunks=[];recorder=new MediaRecorder(stream);
+    recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};
+    recorder.onstop=async()=>{
+      const blob=new Blob(chunks,{type:recorder.mimeType||'audio/webm'});document.getElementById('audio').src=URL.createObjectURL(blob);document.getElementById('audio').style.display='block';stream.getTracks().forEach(t=>t.stop());status.textContent='녹음 완료 · transcript 생성 중...';
+      try{const r=await fetch('/api/transcribe',{method:'POST',headers:{'Content-Type':blob.type||'audio/webm'},body:blob});const d=await r.json();if(!r.ok)throw new Error(d.error||'failed');const out=document.getElementById('transcript');out.style.display='block';out.innerHTML='<b>My Transcript</b><br>'+escapeHtml(d.text||'');status.textContent='전체 Shadowing 녹음 완료'}catch(e){status.textContent='녹음 완료 · 이 테스트 배포에서는 transcript 연결이 안 될 수도 있어요.'}
+    };
+    recorder.start();btn.textContent='■ 녹음 끝내기';status.textContent='전체 Shadowing 녹음 중...';
+  }catch(e){status.textContent='마이크 권한을 허용해주세요.'}
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+renderScript();
+</script>
+</body>
+</html>

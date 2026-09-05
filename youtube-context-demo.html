@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<title>Heart English · Context Video Demo</title>
+<style>
+:root{--bg:#f6f5f1;--card:#fff;--ink:#171717;--muted:#6f6f69;--line:#e7e5de;--soft:#f0efea;--accent:#202020;--green:#edf3eb}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.app{max-width:560px;margin:0 auto;padding:18px 14px 44px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.brand{font-size:12px;font-weight:850;letter-spacing:.08em}.pill{font-size:12px;background:#fff;border:1px solid var(--line);padding:7px 10px;border-radius:999px;color:#666}.hero,.section{background:#fff;border-radius:22px;padding:14px;box-shadow:0 10px 28px rgba(0,0,0,.05);margin-bottom:12px}.video{aspect-ratio:16/9;background:#111;border-radius:16px;overflow:hidden}.video>div,.video iframe{width:100%;height:100%}.eyebrow{font-size:11px;color:#8a8982;font-weight:850;letter-spacing:.08em;margin-top:14px}.title{font-size:26px;font-weight:900;line-height:1.2;margin:5px 0 6px}.desc{font-size:14px;color:var(--muted);line-height:1.55}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.tag{font-size:12px;background:var(--soft);padding:7px 9px;border-radius:999px}.duration{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:13px}.duration button{padding:10px 4px}.duration .active{background:#202020;color:#fff}.buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}button{border:0;border-radius:14px;padding:13px 11px;font-size:14px;font-weight:800;cursor:pointer}.primary{background:#202020;color:#fff}.secondary{background:var(--soft);color:#222}.ghost{background:#fff;border:1px solid var(--line);color:#222}.full{grid-column:1/-1}.status{font-size:12px;color:#777;margin-top:8px}.context{font-size:15px;line-height:1.65;margin-top:8px}.q{font-size:17px;font-weight:800;line-height:1.45;margin:8px 0}.choice{width:100%;text-align:left;background:#f3f2ed;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;border-radius:12px;background:#f3f2ed;font-size:13px;line-height:1.5}.linecard{border:1px solid var(--line);border-radius:18px;padding:14px;margin-top:10px}.num{font-size:11px;color:#888;font-weight:850;letter-spacing:.08em}.english{font-size:19px;font-weight:850;line-height:1.45;margin-top:6px}.korean{font-size:14px;color:#666;line-height:1.5;margin-top:4px}.why{font-size:13px;background:#f5f4ef;border-radius:12px;padding:10px;margin-top:10px;line-height:1.5}.recordbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.recordstatus{font-size:12px;color:#777;margin-top:7px}.audio{width:100%;margin-top:9px;display:none}.key{background:var(--green);border-radius:16px;padding:13px;margin-top:10px}.key strong{font-size:20px}.mine{background:#f4f2ec;border-radius:16px;padding:13px;margin-top:10px}.small{font-size:12px;color:#888;line-height:1.55}.footer{font-size:12px;color:#888;text-align:center;padding:8px 0 0}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="top"><div class="brand">HEART ENGLISH</div><div class="pill">Context Video · Demo</div></div>
+
+  <div class="hero">
+    <div class="video"><div id="player"></div></div>
+    <div class="eyebrow">BUSINESS · TEAMWORK</div>
+    <div class="title">30초 안에 맥락까지 듣기</div>
+    <div class="desc">표현 하나만 외우지 않고, 실제 말이 나오기 전과 뒤의 흐름까지 들어본 뒤 문장별로 다시 말해보는 Heart English 방식입니다.</div>
+    <div class="tags"><span class="tag">Intermediate+</span><span class="tag">Listening</span><span class="tag">Idiom</span><span class="tag">Speaking</span></div>
+    <div class="duration">
+      <button class="secondary" onclick="showToast('10초 Quick Clip은 다른 카드에서 제공')">10초</button>
+      <button class="active" onclick="playClip(423.09,455.041)">30초</button>
+      <button class="secondary" onclick="showToast('1분 Story Clip은 다른 카드에서 제공')">1분</button>
+      <button class="secondary" onclick="showToast('2분 Deep Clip은 다른 카드에서 제공')">2분</button>
+    </div>
+    <div class="buttons">
+      <button class="primary full" onclick="playClip(423.09,455.041)">▶ 먼저 자막 없이 32초 보기</button>
+      <button class="ghost" onclick="playClip(423.09,435.085)">↻ 앞부분 다시 듣기</button>
+      <button class="ghost" onclick="playClip(432.418,435.085)">🎯 핵심 표현 듣기</button>
+    </div>
+    <div id="status" class="status">7:03 → 7:35 · YouTube 원본 임베드</div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">STEP 2 · UNDERSTAND THE CONTEXT</div>
+    <div class="q">무슨 이야기였을까요?</div>
+    <div class="context">서로 다른 전문 분야의 사람들이 함께 일할 때, 가치관·시간 감각·전문용어가 달라서 협업이 어려워질 수 있다는 흐름입니다. 이 차이가 단순한 말투 문제가 아니라 실제 팀워크의 장벽이 될 수 있다는 내용이에요.</div>
+    <button class="choice" onclick="wrong()">한쪽 팀이 준비가 덜 되어 있어서</button>
+    <button class="choice" onclick="right()">전문 분야마다 생각하는 방식과 언어가 달라서</button>
+    <button class="choice" onclick="wrong()">목표 자체가 완전히 달라서</button>
+    <div id="answer" class="answer"></div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">STEP 3 · STUDY THE LINES</div>
+    <div class="q">영상 속 흐름을 문장 단위로 다시 잡아보세요.</div>
+    <div class="small">아래는 전체 대사를 복제한 것이 아니라, 짧은 핵심 발화와 Heart English 학습용 설명을 묶은 예시입니다.</div>
+
+    <div class="linecard">
+      <div class="num">LINE 01 · 7:04–7:09</div>
+      <div class="english">“different values, different time frames”</div>
+      <div class="korean">가치관도 다르고, 일을 바라보는 시간 감각도 다르다.</div>
+      <div class="why">듣기 포인트: values / time frames처럼 명사가 연달아 나올 때 의미 단위를 묶어서 듣기.</div>
+      <div class="recordbar"><button class="secondary" onclick="playClip(424.8,429.2)">▶ 원본 다시 듣기</button><button class="primary" onclick="toggleRecord(1)">● 따라 말하기</button></div>
+      <audio id="audio1" class="audio" controls></audio><div id="rs1" class="recordstatus">아직 녹음하지 않았어요.</div>
+    </div>
+
+    <div class="linecard">
+      <div class="num">LINE 02 · 7:09–7:12</div>
+      <div class="english">“different jargon, different language”</div>
+      <div class="korean">쓰는 전문용어와 표현 방식도 다르다.</div>
+      <div class="why">표현 포인트: jargon = 특정 업계나 직군에서 쓰는 전문용어.</div>
+      <div class="recordbar"><button class="secondary" onclick="playClip(429.2,432.4)">▶ 원본 다시 듣기</button><button class="primary" onclick="toggleRecord(2)">● 따라 말하기</button></div>
+      <audio id="audio2" class="audio" controls></audio><div id="rs2" class="recordstatus">아직 녹음하지 않았어요.</div>
+    </div>
+
+    <div class="linecard">
+      <div class="num">LINE 03 · 7:12–7:15</div>
+      <div class="english">“And so they don’t always see eye to eye.”</div>
+      <div class="korean">그래서 서로 의견이 항상 맞는 것은 아니다.</div>
+      <div class="key"><strong>see eye to eye</strong><br><span class="korean">의견이 일치하다 · 같은 생각을 하다</span></div>
+      <div class="recordbar"><button class="secondary" onclick="playClip(432.418,435.085)">▶ 이 문장만 다시 듣기</button><button class="primary" onclick="toggleRecord(3)">● 따라 말하기</button></div>
+      <audio id="audio3" class="audio" controls></audio><div id="rs3" class="recordstatus">아직 녹음하지 않았어요.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">STEP 4 · MAKE IT MINE</div>
+    <div class="q">이제 영상 문장을 내 영어로 바꿔보세요.</div>
+    <div class="mine"><div class="english">My team and I don’t always see eye to eye on priorities.</div><div class="korean">우리 팀과 저는 우선순위에 대해 항상 의견이 맞는 건 아니에요.</div></div>
+    <div class="mine"><div class="english">Different teams sometimes use different jargon.</div><div class="korean">팀마다 서로 다른 전문용어를 쓰기도 해요.</div></div>
+    <div class="recordbar"><button class="primary" onclick="toggleRecord(4)">● 내 문장 말하기</button><button class="secondary" onclick="playClip(423.09,455.041)">▶ 마지막으로 전체 듣기</button></div>
+    <audio id="audio4" class="audio" controls></audio><div id="rs4" class="recordstatus">질문: Who do you not always see eye to eye with at work?</div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">HOW THIS BECOMES THE APP</div>
+    <div class="context">같은 화면 구조를 두고, Google Sheet에서 영상 ID·시작/끝 시간·주제·핵심 표현·맥락 설명·문장별 재생 구간·말하기 미션만 읽어오게 만들면 됩니다. 그러면 10초, 30초, 1분, 2분 영상이 주제별·표현별로 계속 쌓이는 Heart English 버전의 짧은 영상 학습 앱이 됩니다.</div>
+  </div>
+  <div class="footer">HEART ENGLISH · 실제 맥락을 듣고, 내 영어로 가져오기</div>
+</div>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+let player,stopTimer=null;const VID='3boKz0Exros';
+function onYouTubeIframeAPIReady(){player=new YT.Player('player',{videoId:VID,playerVars:{playsinline:1,rel:0,origin:location.origin,cc_load_policy:0},events:{onReady:()=>document.getElementById('status').textContent='플레이어 준비 완료 · 7:03 → 7:35'}})}
+function playClip(start,end){if(!player||!player.loadVideoById)return;player.loadVideoById({videoId:VID,startSeconds:start,endSeconds:end});document.getElementById('status').textContent=format(start)+' → '+format(end)+' 재생 중';clearInterval(stopTimer);stopTimer=setInterval(()=>{try{if(player.getCurrentTime()>=end-.08){player.pauseVideo();clearInterval(stopTimer);document.getElementById('status').textContent='구간 재생 완료'}}catch(e){}},60)}
+function format(s){const m=Math.floor(s/60),sec=Math.floor(s-m*60).toString().padStart(2,'0');return m+':'+sec}
+function right(){answer.style.display='block';answer.textContent='맞아요. 서로 다른 전문 분야의 문화와 언어 차이가 협업을 어렵게 할 수 있다는 내용이에요.'}
+function wrong(){answer.style.display='block';answer.textContent='한 번 더 들어보고, 서로 다른 직군 사이의 차이에 집중해보세요.'}
+function showToast(t){document.getElementById('status').textContent=t}
+let active=null,recorder=null,chunks=[],stream=null;
+async function toggleRecord(n){const rs=document.getElementById('rs'+n);if(recorder&&recorder.state==='recording'){recorder.stop();return}try{stream=await navigator.mediaDevices.getUserMedia({audio:true});active=n;chunks=[];recorder=new MediaRecorder(stream);recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};recorder.onstop=()=>{const blob=new Blob(chunks,{type:recorder.mimeType||'audio/webm'});const a=document.getElementById('audio'+active);a.src=URL.createObjectURL(blob);a.style.display='block';document.getElementById('rs'+active).textContent='녹음 완료 · 내 목소리를 들어보세요.';stream.getTracks().forEach(t=>t.stop())};recorder.start();rs.textContent='녹음 중... 다시 버튼을 누르면 종료됩니다.'}catch(e){rs.textContent='마이크 권한을 허용하면 바로 녹음할 수 있어요.'}}
+</script>
+</body>
+</html>

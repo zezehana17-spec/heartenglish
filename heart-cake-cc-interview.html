@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Heart English · Authentic Interview 30s</title>
+<style>
+:root{--ink:#1f2430;--muted:#6f7480;--line:#ece8e4;--paper:#fbfaf8;--card:#fff;--accent:#c65d5d;--soft:#f7eeee;--green:#456a58}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:720px;margin:0 auto;padding:22px 16px 56px}.brand{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.logo{font-weight:800;letter-spacing:-.02em}.pill{font-size:12px;padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--muted)}.hero h1{font-size:28px;line-height:1.2;margin:8px 0 8px;letter-spacing:-.03em}.hero p{margin:0 0 16px;color:var(--muted);line-height:1.6}.meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.meta span{font-size:12px;padding:6px 9px;border-radius:999px;background:#fff;border:1px solid var(--line)}.video{aspect-ratio:16/9;background:#111;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.08)}#player{width:100%;height:100%}.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.btn{appearance:none;border:1px solid var(--line);background:#fff;border-radius:12px;padding:11px 14px;font-weight:700;cursor:pointer;color:var(--ink)}.btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}.btn.soft{background:var(--soft);color:#7d3b3b;border-color:#efdede}.section{margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}.kicker{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--accent);text-transform:uppercase}.section h2{font-size:20px;margin:5px 0 6px;letter-spacing:-.02em}.sub{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:14px}.script{font-size:17px;line-height:1.9;letter-spacing:-.01em}.script .line{padding:10px 0;border-bottom:1px dashed #eee}.script .line:last-child{border-bottom:0}.blank{display:inline-block;min-width:72px;border-bottom:2px solid #999;color:transparent;line-height:1.1}.ko{color:#555;margin-top:4px;font-size:15px;line-height:1.7}.tabs{display:none;gap:8px;margin:12px 0}.tabs.show{display:flex}.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 11px;font-weight:700;font-size:13px;cursor:pointer}.tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}.exprs{display:grid;gap:10px}.expr{border:1px solid var(--line);border-radius:14px;padding:13px 14px}.expr b{display:block;margin-bottom:4px}.expr span{font-size:14px;color:var(--muted)}.status{font-size:13px;color:var(--muted);margin-top:9px}.shadowbox{background:#f8f8f7;border:1px solid var(--line);border-radius:14px;padding:14px;margin-top:12px}.shadowtext{font-size:16px;line-height:1.8}.shadowtext.hidden{filter:blur(7px);user-select:none}.recording{font-size:13px;color:var(--accent);font-weight:700}.source{margin-top:24px;font-size:12px;line-height:1.6;color:var(--muted)}.source a{color:inherit}.loading{padding:24px;text-align:center;color:var(--muted)}@media(max-width:520px){.hero h1{font-size:24px}.script{font-size:16px}.section{padding:16px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand"><div class="logo">♥ Heart English</div><div class="pill">Prototype · CC Interview</div></div>
+  <div class="hero">
+    <div class="kicker">30 SECOND · AUTHENTIC INTERVIEW</div>
+    <h1>아이디어만 좋아서는 충분하지 않다</h1>
+    <p>Steve Wozniak의 실제 인터뷰에서 비즈니스·마케팅·엔지니어링 이야기가 나오는 약 30초 구간을 골라 공부합니다.</p>
+    <div class="meta"><span>Business</span><span>Authentic English</span><span>30 sec</span><span>CC BY 3.0</span></div>
+  </div>
+
+  <div class="video"><div id="player"></div></div>
+  <div class="row">
+    <button class="btn primary" id="playWhole">▶ 30초 전체 보기</button>
+    <button class="btn" id="replayWhole">↻ 다시 듣기</button>
+  </div>
+  <div class="status" id="clipStatus">학습 구간을 불러오는 중...</div>
+
+  <section class="section">
+    <div class="kicker">FULL SCRIPT · DICTATION</div>
+    <h2>전체 흐름을 들으면서 빈칸을 채워보세요</h2>
+    <div class="sub">문장별로 쪼개기보다, 30초 전체를 한 번에 잡는 교재형 Dictation입니다.</div>
+    <div id="scriptBox" class="script"><div class="loading">스크립트를 불러오는 중...</div></div>
+    <div class="row"><button class="btn soft" id="answerBtn" disabled>정답 보기 → Full Script</button></div>
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-mode="both">English + 한국어</button>
+      <button class="tab" data-mode="en">English</button>
+      <button class="tab" data-mode="ko">한국어</button>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="kicker">KEY ENGLISH</div>
+    <h2>이 영상에서 이것만은 가져가기</h2>
+    <div class="sub">전체 스크립트 안에 실제로 나온 자연스러운 표현만 뽑습니다.</div>
+    <div class="exprs" id="exprs"><div class="status">전체 스크립트가 준비되면 핵심 표현을 추출합니다.</div></div>
+  </section>
+
+  <section class="section">
+    <div class="kicker">SHADOWING</div>
+    <h2>마지막은 30초 전체를 다시 연결해서 말하기</h2>
+    <div class="sub">문장마다 녹음 버튼을 두지 않고, 마지막에 한 번만 전체 Shadowing을 녹음합니다.</div>
+    <div class="row">
+      <button class="btn primary" id="shadowPlay">▶ Shadowing 시작</button>
+      <button class="btn" id="scriptToggle">Script 숨기기</button>
+    </div>
+    <div class="shadowbox"><div id="shadowText" class="shadowtext">스크립트를 준비하는 중...</div></div>
+    <div class="row">
+      <button class="btn soft" id="recordBtn">🎙 30초 전체 Shadowing 녹음</button>
+      <button class="btn" id="playMine" disabled>▶ 내 목소리 듣기</button>
+    </div>
+    <div class="recording" id="recStatus"></div>
+  </section>
+
+  <div class="source">
+    Source: “Interview with Steve Wozniak,” ConversationEDU / The Conversation. Creative Commons Attribution 3.0. 학습용으로 약 30초 구간을 재생하고, 공개된 영어 자막을 기반으로 Dictation·번역·표현 학습을 구성하는 테스트입니다.
+  </div>
+</div>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+const VIDEO_ID='920QAxtook8';
+let player, ready=false, startSec=0, endSec=30, lines=[], translations=[], expressions=[], revealed=false, viewMode='both';
+let stopTimer=null, mediaRecorder=null, chunks=[], audioUrl=null;
+
+function onYouTubeIframeAPIReady(){
+  player=new YT.Player('player',{videoId:VIDEO_ID,playerVars:{playsinline:1,rel:0,modestbranding:1,cc_load_policy:0},events:{onReady:()=>{ready=true;}}});
+}
+window.onYouTubeIframeAPIReady=onYouTubeIframeAPIReady;
+function playClip(){ if(!ready)return; clearInterval(stopTimer); player.seekTo(startSec,true); player.playVideo(); stopTimer=setInterval(()=>{if(player.getCurrentTime()>=endSec){player.pauseVideo();clearInterval(stopTimer)}},120); }
+
+document.getElementById('playWhole').onclick=playClip;
+document.getElementById('replayWhole').onclick=playClip;
+document.getElementById('shadowPlay').onclick=playClip;
+
+function srtTimeToSec(s){ const m=s.match(/(\d+):(\d+):(\d+)[,.](\d+)/); if(!m)return 0; return +m[1]*3600 + +m[2]*60 + +m[3] + +m[4]/1000; }
+function parseSrt(srt){
+  const blocks=srt.replace(/\r/g,'').trim().split(/\n\n+/); const out=[];
+  for(const b of blocks){ const a=b.split('\n'); const ti=a.findIndex(x=>x.includes('-->')); if(ti<0)continue; const [s,e]=a[ti].split('-->').map(x=>x.trim()); const text=a.slice(ti+1).join(' ').replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/\s+/g,' ').trim(); if(text)out.push({start:srtTimeToSec(s),end:srtTimeToSec(e),text}); }
+  return out;
+}
+function cleanLine(t){ return t.replace(/^[-–—]\s*/,'').replace(/\s+/g,' ').trim(); }
+function chooseWindow(cues){
+  const rx=/(marketing|business|engineering|engineer|entrepreneur)/i;
+  let hit=cues.findIndex(c=>rx.test(c.text)); if(hit<0) hit=Math.min(10,cues.length-1);
+  const anchor=cues[Math.max(0,hit)].start; startSec=Math.max(0,anchor-4); endSec=startSec+30;
+  const chosen=cues.filter(c=>c.end>=startSec && c.start<=endSec);
+  const merged=[];
+  for(const c of chosen){ const t=cleanLine(c.text); if(!t)continue; if(merged.length && merged[merged.length-1].text===t)continue; merged.push({text:t,start:c.start,end:c.end}); }
+  lines=merged.slice(0,10);
+  document.getElementById('clipStatus').textContent=`선택 구간 ${format(startSec)}–${format(endSec)} · ${Math.round(endSec-startSec)}초`;
+}
+function format(sec){ const m=Math.floor(sec/60), s=Math.floor(sec%60); return `${m}:${String(s).padStart(2,'0')}`; }
+
+const stop=new Set('the a an and or but so to of in on at for from with as is are was were be been being it its this that these those i you we they he she my your our their me us them do does did have has had can could would should will just really very about into than then there here what when where who how because if even not no yes get got make made more most some any all one two three'.split(' '));
+function maskWords(text, seed){
+  const words=text.split(/(\s+)/); let count=0;
+  const candidates=[];
+  words.forEach((w,i)=>{const bare=w.toLowerCase().replace(/[^a-z']/g,''); if(bare.length>=6&&!stop.has(bare)) candidates.push(i)});
+  const chosen=new Set(); const target=Math.min(2,Math.max(1,Math.floor(candidates.length/4)));
+  for(let k=0;k<target;k++){ if(candidates.length) chosen.add(candidates[(seed+k*3)%candidates.length]); }
+  return words.map((w,i)=>chosen.has(i)?'<span class="blank">'+escapeHtml(w)+'</span>':escapeHtml(w)).join('');
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function renderScript(){
+  const box=document.getElementById('scriptBox');
+  if(!lines.length){box.innerHTML='<div class="status">스크립트를 찾지 못했습니다.</div>';return;}
+  box.innerHTML=lines.map((l,i)=>{
+    if(!revealed) return `<div class="line">${maskWords(l.text,i+2)}</div>`;
+    if(viewMode==='en') return `<div class="line">${escapeHtml(l.text)}</div>`;
+    if(viewMode==='ko') return `<div class="line"><div class="ko">${escapeHtml(translations[i]||'번역 준비 중...')}</div></div>`;
+    return `<div class="line">${escapeHtml(l.text)}<div class="ko">${escapeHtml(translations[i]||'번역 준비 중...')}</div></div>`;
+  }).join('');
+  const sh=lines.map((l,i)=>escapeHtml(l.text)+(translations[i]?`<div class="ko">${escapeHtml(translations[i])}</div>`:'')).join('<br>');
+  document.getElementById('shadowText').innerHTML=sh;
+}
+function renderExprs(){ const e=document.getElementById('exprs'); if(!expressions.length){e.innerHTML='<div class="status">핵심 표현을 불러오는 중...</div>';return;} e.innerHTML=expressions.slice(0,3).map(x=>`<div class="expr"><b>${escapeHtml(x.phrase)}</b><span>${escapeHtml(x.meaningKo)}</span></div>`).join(''); }
+
+async function translate(){
+  try{
+    const r=await fetch('/api/translate-script',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({lines:lines.map(x=>x.text)})});
+    const d=await r.json(); if(!r.ok) throw new Error(d.error||'translation failed');
+    translations=d.translations||[]; expressions=d.expressions||[]; renderExprs(); if(revealed)renderScript(); else document.getElementById('shadowText').innerHTML=lines.map(x=>escapeHtml(x.text)).join('<br>');
+  }catch(e){
+    translations=lines.map(()=> '');
+    expressions=[];
+    document.getElementById('exprs').innerHTML='<div class="status">이번 테스트에서는 영어 스크립트만 표시됩니다. 실제 콘텐츠 생성 시 한국어 번역과 핵심 표현을 시트에 저장하는 구조로 연결하면 됩니다.</div>';
+    document.getElementById('shadowText').innerHTML=lines.map(x=>escapeHtml(x.text)).join('<br>');
+  }
+}
+
+async function loadCaptions(){
+  try{
+    const title='TimedText:Interview_with_Steve_Wozniak.webm.en.srt';
+    const api='https://commons.wikimedia.org/w/api.php?action=query&prop=revisions&titles='+encodeURIComponent(title)+'&rvprop=content&rvslots=main&format=json&formatversion=2&origin=*';
+    const r=await fetch(api); const d=await r.json(); const srt=d?.query?.pages?.[0]?.revisions?.[0]?.slots?.main?.content;
+    if(!srt) throw new Error('subtitle not found');
+    const cues=parseSrt(srt); chooseWindow(cues); renderScript();
+    document.getElementById('answerBtn').disabled=false;
+    translate();
+  }catch(e){
+    document.getElementById('clipStatus').textContent='자막을 불러오지 못했습니다.';
+    document.getElementById('scriptBox').innerHTML='<div class="status">Wikimedia TimedText 자막 연결을 확인해주세요.</div>';
+  }
+}
+
+const answerBtn=document.getElementById('answerBtn');
+answerBtn.onclick=()=>{ revealed=!revealed; answerBtn.textContent=revealed?'Dictation으로 돌아가기':'정답 보기 → Full Script'; document.getElementById('tabs').classList.toggle('show',revealed); renderScript(); };
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');viewMode=b.dataset.mode;renderScript();});
+const scriptToggle=document.getElementById('scriptToggle'); scriptToggle.onclick=()=>{const el=document.getElementById('shadowText');el.classList.toggle('hidden');scriptToggle.textContent=el.classList.contains('hidden')?'Script 보기':'Script 숨기기';};
+
+const recordBtn=document.getElementById('recordBtn'), playMine=document.getElementById('playMine'), recStatus=document.getElementById('recStatus');
+recordBtn.onclick=async()=>{
+  if(mediaRecorder&&mediaRecorder.state==='recording'){mediaRecorder.stop();return;}
+  try{ const stream=await navigator.mediaDevices.getUserMedia({audio:true}); chunks=[]; mediaRecorder=new MediaRecorder(stream); mediaRecorder.ondataavailable=e=>chunks.push(e.data); mediaRecorder.onstop=()=>{ const blob=new Blob(chunks,{type:mediaRecorder.mimeType}); if(audioUrl)URL.revokeObjectURL(audioUrl); audioUrl=URL.createObjectURL(blob); playMine.disabled=false; recStatus.textContent='녹음 완료'; stream.getTracks().forEach(t=>t.stop()); recordBtn.textContent='🎙 다시 녹음'; }; mediaRecorder.start(); recStatus.textContent='녹음 중...'; recordBtn.textContent='■ 녹음 끝내기'; playClip(); setTimeout(()=>{if(mediaRecorder&&mediaRecorder.state==='recording')mediaRecorder.stop()},30500); }catch(e){recStatus.textContent='마이크 권한이 필요합니다.';}
+};
+playMine.onclick=()=>{if(audioUrl)new Audio(audioUrl).play();};
+
+loadCaptions();
+</script>
+</body>
+</html>

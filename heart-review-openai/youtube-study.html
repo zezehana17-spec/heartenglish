@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Heart English · Context Clip Study</title>
+<style>
+:root{--bg:#f7f7f4;--card:#fff;--ink:#171717;--muted:#6f6f6a;--line:#e8e8e3;--soft:#f1f1ed;--accent:#202020}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.app{max-width:520px;margin:0 auto;padding:18px 14px 42px}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.brand{font-size:12px;font-weight:850;letter-spacing:.08em}.badge{font-size:12px;background:white;border:1px solid var(--line);padding:7px 10px;border-radius:999px;color:#666}.card{background:var(--card);border-radius:22px;padding:14px;box-shadow:0 10px 28px rgba(0,0,0,.055)}.video{position:relative;aspect-ratio:16/9;background:#111;border-radius:16px;overflow:hidden}.video>div,.video iframe{width:100%;height:100%}.subOverlay{position:absolute;left:8%;right:8%;bottom:8%;text-align:center;pointer-events:none;display:none}.subBox{display:inline-block;max-width:100%;background:rgba(16,16,16,.82);color:#fff;border-radius:12px;padding:8px 10px;line-height:1.35}.subEn{font-size:14px;font-weight:750}.subKo{font-size:12px;color:#e7e7e7;margin-top:3px}.kicker{font-size:11px;font-weight:800;letter-spacing:.08em;color:#8a8a84;margin-top:15px}.title{font-size:24px;font-weight:850;margin:5px 0 4px}.desc{font-size:14px;line-height:1.5;color:var(--muted)}.buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}button{border:0;border-radius:14px;padding:13px 11px;font-size:14px;font-weight:760;cursor:pointer}.primary{background:var(--accent);color:white}.secondary{background:var(--soft);color:#222}.ghost{background:white;color:#222;border:1px solid var(--line)}.full{grid-column:1/-1}.modeRow{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.section{background:white;border:1px solid #efefeb;border-radius:19px;padding:16px;margin-top:12px}.label{font-size:11px;color:#8a8a84;font-weight:800;letter-spacing:.08em}.question{font-size:18px;font-weight:760;line-height:1.45;margin-top:7px}.choice{display:block;width:100%;text-align:left;background:#f4f4f0;margin-top:8px}.choice.ok{background:#edf2ea}.answer{display:none;margin-top:10px;background:#f4f4f0;border-radius:12px;padding:11px;font-size:14px;line-height:1.5}.expr{font-size:21px;font-weight:850;margin-top:6px}.ko{color:#666;font-size:14px;line-height:1.5}.recordStatus,.transcript{font-size:13px;color:#6f6f6a;line-height:1.5;margin-top:9px}.transcript{display:none;background:#f4f4f0;padding:11px;border-radius:12px;color:#222}.small{font-size:12px;color:#888;line-height:1.5;margin-top:12px}.status{font-size:12px;color:#777;margin-top:8px}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="top"><div class="brand">HEART ENGLISH</div><div class="badge">Context Clip Test</div></div>
+  <div class="card">
+    <div class="video">
+      <div id="player"></div>
+      <div id="subOverlay" class="subOverlay"><div class="subBox"><div id="subEn" class="subEn"></div><div id="subKo" class="subKo"></div></div></div>
+    </div>
+    <div class="kicker">STEP 1 · WATCH THE CONTEXT</div>
+    <div class="title">맥락으로 듣는 32초</div>
+    <div class="desc">표현만 잘라 외우는 대신, 앞뒤 맥락까지 한 번에 들어보는 테스트예요.</div>
+    <div class="buttons">
+      <button class="primary full" onclick="playLesson(false)">▶ 자막 없이 32초 보기</button>
+    </div>
+    <div class="modeRow">
+      <button class="secondary" onclick="playLesson(true)">💬 학습 자막 보기</button>
+      <button class="ghost" onclick="toggleSubtitle()">자막 ON / OFF</button>
+    </div>
+    <div id="status" class="status">7:03 → 7:35 구간</div>
+  </div>
+
+  <div class="section">
+    <div class="label">STEP 2 · CONTEXT CHECK</div>
+    <div class="question">왜 두 직군이 서로 의견이 맞지 않을 수 있다고 했을까요?</div>
+    <button class="choice" onclick="wrong(this)">한쪽이 경험이 부족해서</button>
+    <button class="choice" onclick="right(this)">가치관·시간 감각·사용하는 용어가 달라서</button>
+    <button class="choice" onclick="wrong(this)">목표 자체가 완전히 달라서</button>
+    <div id="answer" class="answer">맞아요. 서로 다른 전문 분야의 ‘문화 차이’가 협업의 장벽이 될 수 있다는 흐름이에요.</div>
+  </div>
+
+  <div class="section">
+    <div class="label">STEP 3 · TAKE ONE EXPRESSION</div>
+    <div class="expr">see eye to eye</div>
+    <div class="ko">의견이 일치하다 · 같은 생각을 하다</div>
+    <div class="buttons"><button class="secondary full" onclick="playTarget()">▶ 표현이 나오는 부분 다시 듣기</button></div>
+  </div>
+
+  <div class="section">
+    <div class="label">STEP 4 · MAKE IT YOURS</div>
+    <div class="question">Who do you not always see eye to eye with?</div>
+    <div class="ko">한두 문장으로 직접 말해보세요. 녹음 후 자동으로 영어 transcript까지 확인합니다.</div>
+    <div class="buttons"><button id="recBtn" class="primary full" onclick="toggleRecording()">● 녹음 시작</button></div>
+    <audio id="audio" controls style="display:none;width:100%;margin-top:10px"></audio>
+    <div id="recordStatus" class="recordStatus">아직 녹음하지 않았어요.</div>
+    <div id="transcript" class="transcript"></div>
+  </div>
+
+  <div class="small">테스트용: YouTube 원본은 다운로드하지 않습니다. 외부 영상의 정확한 전체 영어 자막은 영상 자체의 CC를 우선 사용하고, Heart English 레이어에는 학습용 핵심 자막·한국어 도움을 저장하는 구조를 테스트합니다.</div>
+</div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+const lesson={
+  videoId:'3boKz0Exros', start:423.09, end:455.041,
+  subtitles:[
+    {s:423.09,e:429.20,en:'different values, different time frames',ko:'가치관도 다르고, 시간 감각도 달라요.'},
+    {s:429.20,e:432.40,en:'and different jargon, different language',ko:'쓰는 전문용어와 언어도 다릅니다.'},
+    {s:432.40,e:435.10,en:'And so they don\'t always see eye to eye.',ko:'그래서 항상 의견이 맞는 것은 아니에요.'},
+    {s:435.10,e:443.70,en:'This kind of professional mismatch can be a bigger problem than it seems.',ko:'이런 전문 분야 간 문화 충돌은 생각보다 큰 문제가 될 수 있어요.'},
+    {s:443.70,e:451.05,en:'It can get in the way of building the future people want.',ko:'우리가 원하는 미래를 함께 만드는 데 장벽이 될 수 있습니다.'},
+    {s:451.05,e:455.05,en:'So the challenge is to understand it and figure out how to solve it.',ko:'그래서 이 문제를 이해하고 풀 방법을 찾아야 한다는 흐름입니다.'}
+  ]
+};
+let player,subOn=false,stopTimer=null,subTimer=null;
+function onYouTubeIframeAPIReady(){
+  player=new YT.Player('player',{videoId:lesson.videoId,playerVars:{playsinline:1,rel:0,origin:location.origin,cc_load_policy:0},events:{onReady:()=>document.getElementById('status').textContent='플레이어 준비 완료 · 7:03 → 7:35'}})
+}
+function runTimers(end){
+  if(stopTimer)clearInterval(stopTimer); if(subTimer)clearInterval(subTimer);
+  stopTimer=setInterval(()=>{try{const t=player.getCurrentTime();if(t>=end-.08){player.pauseVideo();clearInterval(stopTimer);clearInterval(subTimer);document.getElementById('status').textContent='재생 완료'}}catch(e){}},60);
+  subTimer=setInterval(updateSubtitle,80);
+}
+function playLesson(withSubs){
+  subOn=withSubs; document.getElementById('subOverlay').style.display=subOn?'block':'none';
+  player.loadVideoById({videoId:lesson.videoId,startSeconds:lesson.start,endSeconds:lesson.end});
+  document.getElementById('status').textContent=(withSubs?'학습 자막 ON · ':'자막 OFF · ')+'7:03 → 7:35'; runTimers(lesson.end)
+}
+function playTarget(){
+  subOn=true; document.getElementById('subOverlay').style.display='block';
+  player.loadVideoById({videoId:lesson.videoId,startSeconds:432.418,endSeconds:435.085}); runTimers(435.085)
+}
+function toggleSubtitle(){subOn=!subOn;document.getElementById('subOverlay').style.display=subOn?'block':'none';if(!subOn){document.getElementById('subEn').textContent='';document.getElementById('subKo').textContent=''}}
+function updateSubtitle(){if(!subOn||!player)return;let t=0;try{t=player.getCurrentTime()}catch(e){return}const seg=lesson.subtitles.find(x=>t>=x.s&&t<x.e);const box=document.getElementById('subOverlay');if(seg){box.style.display='block';document.getElementById('subEn').textContent=seg.en;document.getElementById('subKo').textContent=seg.ko}else{document.getElementById('subEn').textContent='';document.getElementById('subKo').textContent=''}}
+function wrong(el){el.style.opacity=.55;document.getElementById('answer').style.display='block';document.getElementById('answer').textContent='다시 생각해보고 한 번 더 들어보세요.'}
+function right(el){el.classList.add('ok');document.getElementById('answer').style.display='block';document.getElementById('answer').textContent='맞아요. 서로 다른 전문 분야의 문화 차이가 협업의 장벽이 될 수 있다는 흐름이에요.'}
+let mediaRecorder,chunks=[],stream;
+async function toggleRecording(){
+ const btn=document.getElementById('recBtn'),status=document.getElementById('recordStatus');
+ if(mediaRecorder&&mediaRecorder.state==='recording'){mediaRecorder.stop();btn.textContent='● 다시 녹음';return}
+ try{
+  stream=await navigator.mediaDevices.getUserMedia({audio:true});chunks=[];mediaRecorder=new MediaRecorder(stream);
+  mediaRecorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};
+  mediaRecorder.onstop=async()=>{
+    const blob=new Blob(chunks,{type:mediaRecorder.mimeType||'audio/webm'});const url=URL.createObjectURL(blob);const audio=document.getElementById('audio');audio.src=url;audio.style.display='block';stream.getTracks().forEach(t=>t.stop());
+    status.textContent='녹음 완료 · transcript 생성 중...';
+    try{const r=await fetch('/api/transcribe',{method:'POST',headers:{'Content-Type':blob.type||'audio/webm'},body:blob});const data=await r.json();if(!r.ok)throw new Error(data.error||'Transcription failed');const out=document.getElementById('transcript');out.style.display='block';out.innerHTML='<b>My Transcript</b><br>'+escapeHtml(data.text||'');status.textContent='녹음 + transcript 완료'}catch(e){status.textContent='녹음은 완료됐지만 transcript 요청 실패: '+e.message}
+  };
+  mediaRecorder.start();btn.textContent='■ 녹음 끝내기';status.textContent='녹음 중...';
+ }catch(e){status.textContent='마이크 권한을 허용해야 녹음할 수 있어요.'}
+}
+function escapeHtml(s){return String(s).replace(/[&<>'\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','\"':'&quot;'}[c]))}
+</script>
+</body>
+</html>
